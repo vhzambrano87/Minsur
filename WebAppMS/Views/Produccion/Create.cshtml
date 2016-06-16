@@ -1,0 +1,276 @@
+﻿@model WebAppMS.Models.DTOProduccionM
+
+@{
+    ViewBag.Title = "Produccion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>Registro Produccion</h2>
+
+</header>
+
+<!-- widget div-->
+<div>
+    @if (Model.resultado == 1)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Información</h4>
+            <p>
+                Se registró correctamente la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    @if (Model.resultado == 2)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Error</h4>
+            <p>
+                No se pudo registrar la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+        <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+        <form id="order-form" class="smart-form" novalidate="novalidate" method="post">
+
+            @Html.HiddenFor(model => model.turno_id)
+            @Html.HiddenFor(model => model.usuario_crea)
+            @Html.HiddenFor(model => model.fecha_crea)
+            @Html.HiddenFor(model => model.usuario_mod)
+            @Html.HiddenFor(model => model.fecha_mod)     
+            @Html.HiddenFor(model => model.fecha_desc)       
+            <fieldset>
+                <div class="row">
+                    <section class="col col-6">
+
+                        <label class="label">Fecha</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-calendar"></i>
+                            <input id="fecha_text" type="text" name="request" class="datepicker" data-dateformat='dd/mm/yy'>
+
+                        </label>
+                        <br />
+                        <label class="label">Turno</label>
+                        <label class="select">
+                            @Html.DropDownList("ListaTurno123", (IEnumerable<SelectListItem>)ViewBag.ListaTurno, new { @class = "select" })
+                        </label>
+                        <br />
+                        <label class="label">TM Acum. Faja 1</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.tm_acum_faja1)
+                            @Html.ValidationMessageFor(model => model.tm_acum_faja1, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">TM Acum. OB</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.tm_acum_ob)
+                            @Html.ValidationMessageFor(model => model.tm_acum_ob, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">MPS (%)</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.mps_porc)
+                            @Html.ValidationMessageFor(model => model.mps_porc, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Presión Nitrógeno</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.presion_ntg)
+                            @Html.ValidationMessageFor(model => model.presion_ntg, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">RPM Main Shaft</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.rpm_main_shaft)
+                            @Html.ValidationMessageFor(model => model.rpm_main_shaft, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Amp. Chancadora</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.amp_chancadora)
+                            @Html.ValidationMessageFor(model => model.amp_chancadora, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">F. Aceite Sup (L/Min)</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.f_aceite_sup)
+                            @Html.ValidationMessageFor(model => model.f_aceite_sup, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">F. Aceite Min (L/Min)</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.f_aceite_inf)
+                            @Html.ValidationMessageFor(model => model.f_aceite_inf, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">RPM Apron Feeder</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.rpm_apron_feeder)
+                            @Html.ValidationMessageFor(model => model.rpm_apron_feeder, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">A Apron Feeder</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.a_apron_feeder)
+                            @Html.ValidationMessageFor(model => model.a_apron_feeder, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">A Faja #1</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.a_faja_uno)
+                            @Html.ValidationMessageFor(model => model.a_faja_uno, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">A Faja #2</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.a_faja_dos)
+                            @Html.ValidationMessageFor(model => model.a_faja_dos, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">A Faja #3</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.a_faja_tres)
+                            @Html.ValidationMessageFor(model => model.a_faja_tres, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">TPM</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.tpm)
+                            @Html.ValidationMessageFor(model => model.tpm, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Polígonos</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.poligonos)
+                            @Html.ValidationMessageFor(model => model.poligonos, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Celda</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.celda)
+                            @Html.ValidationMessageFor(model => model.celda, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">%Frec. Av. "A"</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.frec_av_a)
+                            @Html.ValidationMessageFor(model => model.frec_av_a, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">%Frec. Av. "B"</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.frec_av_b)
+                            @Html.ValidationMessageFor(model => model.frec_av_b, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">%Frec. Av. "C"</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.frec_av_c)
+                            @Html.ValidationMessageFor(model => model.frec_av_c, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Presión Hidra 1</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.pr_hidra_uno)
+                            @Html.ValidationMessageFor(model => model.pr_hidra_uno, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Presión Hidra 2</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.pr_hidra_dos)
+                            @Html.ValidationMessageFor(model => model.pr_hidra_dos, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">%TK Verde</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.tk_verde)
+                            @Html.ValidationMessageFor(model => model.tk_verde, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">%TK Rojo</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.tk_rojo)
+                            @Html.ValidationMessageFor(model => model.tk_rojo, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Stock Pile</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.stock_pile)
+                            @Html.ValidationMessageFor(model => model.stock_pile, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Ratio Cal (Kg/TM)</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.ratio_cal)
+                            @Html.ValidationMessageFor(model => model.ratio_cal, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Silo A(m)</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.silo_a)
+                            @Html.ValidationMessageFor(model => model.silo_a, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Silo B(m)</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.silo_b)
+                            @Html.ValidationMessageFor(model => model.silo_b, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Observación</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.observacion)
+                        </label>
+                        <br />
+                        <label>
+                            <i></i>Activo @Html.CheckBoxFor(model => model.activo)
+                        </label>
+                        
+                    </section>
+                </div>
+            </fieldset>
+
+            <footer>
+                <a href="@Url.Action("Index", "Produccion")" class="btn btn-primary">Volver</a>
+                <input type="submit" class="btn btn-primary" name="submit" value="Grabar" onclick="ObtenerCombos()">
+            </footer>
+        </form>
+
+    </div>
+    <!-- end widget content -->
+
+</div>
+@section pagespecific {
+    <script type="text/javascript">
+
+            // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+            $(document).ready(function () {
+                $('body').css('zoom', '80%');
+                document.getElementById("fecha_text").value = document.getElementById("fecha_desc").value;
+            });
+    </script>
+}
+<script type="text/javascript">
+    function ObtenerCombos() {
+        debugger;
+        document.getElementById("turno_id").value = document.getElementById("ListaTurno123").value;
+        document.getElementById("fecha_desc").value = document.getElementById("fecha_text").value;
+    }
+
+</script>

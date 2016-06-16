@@ -1,0 +1,290 @@
+﻿    <!-- Left panel : Navigation area -->
+<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+<aside id="left-panel">
+
+
+    <!-- NAVIGATION : This navigation is also responsive
+
+    To make this navigation dynamic please make sure to link the node
+    (the reference to the nav > ul) after page load. Or the navigation
+    will not initialize.
+    -->
+    <nav>
+        <!-- NOTE: Notice the gaps after each icon usage <i></i>..
+        Please note that these links work a bit different than
+        traditional href="" links. See documentation for details.
+        -->
+
+        <ul>
+
+
+            <li>
+                <a href="#"><i class="fa fa-lg fa-fw fa-user"></i> <span class="menu-item-parent">Seguridad</span></a>
+                <ul>
+                    <li>
+
+                        @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[SEG_USUARIO]"))
+                        {
+                        <a href="@Url.Action("Index", "Usuario")">Usuarios</a>
+                        }
+                    </li>
+                    <li>
+                        @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[SEG_ROL]"))
+                        {
+                        <a href="@Url.Action("Index", "Rol")">Roles</a>
+                        }
+                    </li>
+                    <li>
+                        @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[SEG_OPCION]"))
+                        {
+                        <a href="@Url.Action("Index", "Opcion")">Opciones</a>
+                        }
+                    </li>
+                </ul>
+
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Mant. Planta</span></a>
+                <ul>
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_PLNT_LISTA]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Lista")">Lista</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_PLNT_LVALOR]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Lista_valor")">Lista de Valores</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_PLNT_ESTADO]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Estado")">Estado</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_PLNT_TPARADA]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Tipo_parada")">Tipos de Parada</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_PLNT_GUARDIA]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Guardia")">Guardia</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_PLNT_PARADA]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Parada")">Parada</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_PLNT_PROCESO]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Proceso")">Proceso</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_PLNT_ADSORCION]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Adsorcion")">Adsorción</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_PLNT_DESORCION]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Desorcion")">Desorción</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_PLNT_PARAMETRO]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Parametro")">Parámetros</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_PLNT_PRODUCCION]"))
+                    {
+                    <li>
+                        <a href="#">Producción</a>
+                        <ul>
+                            <li>
+                                <a href="@Url.Action("Index", "Produccion")"><i class="fa fa-fw fa-folder-open"></i>Producción</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index", "Prod_chancadora")"><i class="fa fa-fw fa-folder-open"></i>Chancadora</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Index", "Prod_ore_bin")"><i class="fa fa-fw fa-folder-open"></i>Ore Bin</a>
+                            </li>
+                        </ul>
+                    </li>
+                    }
+                </ul>
+                
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Mant. Mina</span></a>
+                <ul>
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_MINA_COMBUSTIBLE]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Consumo_combustible")">Consumo de Combustible</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_MINA_CHANCADORA]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Chancadora")">Chancadora</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_MINA_EQUIPO]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Mant_equipos")">Equipos</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_MINA_PRODUCCION]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Mant_produccion_x_hora")">Producción por Hora</a>
+                    </li>
+                    }
+                </ul>
+
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Mant. Lixiviación</span></a>
+                <ul>
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_LIXI_NIVPOZO]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Ingresonivelespoza")">Niveles Poza</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_LIXI_GOTEO]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Ingresoporgoteo")">Ingreso por Goteo</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_LIXI_APILAMIENTO]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Apilamiento")">Apilamiento</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_LIXI_AGUAOP]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Aguas_operaciones")">Aguas - Operaciones</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_LIXI_TURNO]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Turno_lix")">Turno</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_LIXI_FLUJO]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Flujos_presiones")">Flujos y Presiones</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_LIXI_CDIGITAL]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Control_dig_lixiviacion")">Control Digital Lixiviación</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[M_LIXI_CAMION]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "Camiones")">Camiones</a>
+                    </li>
+                    }
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Reportes - Planta</span></a>
+                <ul>
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[R_PLNT_DGUARDIA]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "RepDiarioChancado")">Diario de Guardia</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[R_PLNT_PRODCHANC]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "RepProduccionChancado")">Producción Chancado (Sin Plantilla)</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[R_PLNT_PARD_CH_OB]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "RepParadaChancado")">Parada Chancado / Ore Bin</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[R_PLNT_UTLOEE]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "RepUtilizacionChancado")">Utilización y OEE Planta Chancado</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[R_PLNT_KPI_CH]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "RepKPIChancado")">KPI/Hora Chancado</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[R_PLNT_BAL_ADSORCION]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "RepAdsorcion")">Balance de Adsorción</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[R_PLNT_DESORCION]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "RepDesorcion")">Desorción</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[R_PLNT_DR_OP_PLANTA]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "RepDiarioOperacionP")">Diario Operación Planta</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[R_PLNT_PARM_PLANTA]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "RepParametro")">Parámetros de Planta por Día</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[R_PLNT_PARM_PL_ADR]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "")">Parámetros de Planta ADR KPI/Hora</a>
+                    </li>
+                    }
+                    @if (HttpContext.Current.Session["USR_OPCION"].ToString().Contains("[R_PLNT_FUND_CALC]"))
+                    {
+                    <li>
+                        <a href="@Url.Action("Index", "")">Fundiciones Calculadas (Sin Búsqueda)</a>
+                    </li>
+                    }
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <span class="minifyme" data-action="minifyMenu">
+        <i class="fa fa-arrow-circle-left hit"></i>
+    </span>
+
+</aside>
+<!-- END NAVIGATION -->

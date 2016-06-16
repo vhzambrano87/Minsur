@@ -1,0 +1,91 @@
+﻿@model WebAppMS.Models.DTORepUtilizacionChancadoM
+
+@{
+    ViewBag.Title = "Reporte Utilización";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>Reporte Utilización</h2>
+
+</header>
+
+<!-- widget div-->
+<div>
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+        <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+        <form id="order-form" class="smart-form" novalidate="novalidate" method="post">
+            @Html.HiddenFor(model => model.turno_id)
+            @Html.HiddenFor(model => model.area_id)
+            @Html.HiddenFor(model => model.fecha_desde)
+            @Html.HiddenFor(model => model.fecha_hasta)
+
+            <fieldset>
+                <div class="row">
+                    <section class="col col-6">
+                        <label class="label">Fecha Desde</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-calendar"></i>
+                            <input id="fecha_desdeH" type="text" name="request" class="datepicker" data-dateformat='yy-mm-dd'>
+
+                        </label>
+                        <br />
+                        <label class="label">Fecha Hasta</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-calendar"></i>
+                            <input id="fecha_hastaH" type="text" name="request" class="datepicker" data-dateformat='yy-mm-dd'>
+
+                        </label>
+                        <br />
+                        <label class="label">Área</label>
+                        <label class="select">
+                            @Html.DropDownList("ListaArea123", (IEnumerable<SelectListItem>)ViewBag.ListaArea, new { @class = "select" })
+                        </label>
+                        <br />
+                        <label class="label">Turno</label>
+                        <label class="select">
+                            @Html.DropDownList("ListaTurno123", (IEnumerable<SelectListItem>)ViewBag.ListaTurno, new { @class = "select" })
+                        </label>
+
+                    </section>
+                </div>
+            </fieldset>
+
+            <footer>
+                <a href="@Url.Action("Index", "Home")" class="btn btn-primary">Volver</a>
+                <input type="submit" class="btn btn-primary" name="submit" value="Generar Reporte" onclick="ObtenerCombos()">
+            </footer>
+        </form>
+
+    </div>
+    <!-- end widget content -->
+
+</div>
+@section pagespecific {
+    <script type="text/javascript">
+
+            // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+            $(document).ready(function () {
+                $('body').css('zoom', '80%');
+            });
+    </script>
+}
+<script type="text/javascript">
+    function ObtenerCombos() {
+        debugger;
+        document.getElementById("area_id").value = document.getElementById("ListaArea123").value;
+        document.getElementById("turno_id").value = document.getElementById("ListaTurno123").value;
+        
+        document.getElementById("fecha_desde").value = document.getElementById("fecha_desdeH").value;
+        document.getElementById("fecha_hasta").value = document.getElementById("fecha_hastaH").value;
+    }
+</script>

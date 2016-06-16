@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e66e56e4e4014e7790ace7815349135d" Name="Diagram1" ZoomLevel="75">
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_ADSORCION" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_CHANCADORA" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_CONSUMO_COMBUSTIBLE" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_DESORCION" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_ESTADO" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_GUARDIA" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_LISTA" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_LISTA_VALOR" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_MANT_EQUIPOS" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_MANT_PRODUCCION_X_HORA" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_PARADA" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_PARAMETRO" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_PROCESO" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_TIPO_PARADA" Width="1.5" PointX="8.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_INGRESONIVELESPOZA" Width="1.5" PointX="11.375" PointY="11.75" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_INGRESOPORGOTEO" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_AGUAS_OPERACIONES" Width="1.5" PointX="13.75" PointY="7.75" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_APILAMIENTO" Width="1.5" PointX="15.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_CAMIONES" Width="1.5" PointX="15.75" PointY="7.75" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_FLUJOS_PRESIONES" Width="1.5" PointX="0.75" PointY="16.75" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_OPCION" Width="1.5" PointX="18.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_ROL" Width="1.5" PointX="18.375" PointY="4.75" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_ROL_OPCION" Width="1.5" PointX="18.375" PointY="8.75" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_USUARIO" Width="1.5" PointX="18.375" PointY="11.75" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_USUARIO_ROL" Width="1.5" PointX="18.375" PointY="15.75" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_TURNO_LIX" Width="1.5" PointX="9.375" PointY="16.75" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_CONTROL_DIG_LIXIVIACION" Width="1.5" PointX="11.75" PointY="19" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_PROD_CHANCADORA" Width="1.5" PointX="16.375" PointY="18.75" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_PROD_ORE_BIN" Width="1.5" PointX="18.375" PointY="18.75" />
+        <EntityTypeShape EntityType="MinsurRepoModel.MS_PRODUCCION" Width="1.5" PointX="20.375" PointY="0.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

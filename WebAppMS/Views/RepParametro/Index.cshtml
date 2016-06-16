@@ -1,0 +1,59 @@
+﻿@model WebAppMS.Models.DTOParametroM
+
+@{
+    ViewBag.Title = "Reporte Parametro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>Reporte Parámetro</h2>
+
+</header>
+
+<!-- widget div-->
+<div>
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+        <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+        <form id="order-form" class="smart-form" novalidate="novalidate" method="post">
+            <fieldset>
+                <div class="row">
+                    <section class="col col-6">
+                    </section>
+                </div>
+            </fieldset>
+
+            <footer>
+                <a href="@Url.Action("Index", "Home")" class="btn btn-primary">Volver</a>
+                <input type="submit" class="btn btn-primary" name="submit" value="Generar Reporte" onclick="ObtenerCombos()">
+            </footer>
+        </form>
+
+    </div>
+    <!-- end widget content -->
+
+</div>
+@section pagespecific {
+    <script type="text/javascript">
+
+            // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+            $(document).ready(function () {
+                $('body').css('zoom', '80%');
+            });
+    </script>
+}
+
+<script type="text/javascript">
+    function ObtenerCombos() {
+        debugger;
+        
+    }
+</script>

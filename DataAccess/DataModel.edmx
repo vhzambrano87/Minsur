@@ -1,0 +1,2236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MinsurRepoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MS_ADSORCION">
+          <Key>
+            <PropertyRef Name="adsorcion_id" />
+          </Key>
+          <Property Name="adsorcion_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="horas" Type="int" />
+          <Property Name="au_ing_n1" Type="float" />
+          <Property Name="au_ing_n2" Type="float" />
+          <Property Name="au_sal_n1" Type="float" />
+          <Property Name="au_sal_n2" Type="float" />
+          <Property Name="ag_ing_n1" Type="float" />
+          <Property Name="ag_ing_n2" Type="float" />
+          <Property Name="ag_sal_n1" Type="float" />
+          <Property Name="ag_sal_n2" Type="float" />
+          <Property Name="flujo_ini_1" Type="float" />
+          <Property Name="flujo_ini_2" Type="float" />
+          <Property Name="flujo_fin_1" Type="float" />
+          <Property Name="flujo_fin_2" Type="float" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_AGUAS_OPERACIONES">
+          <Key>
+            <PropertyRef Name="agua_op_id" />
+          </Key>
+          <Property Name="agua_op_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="turno_id" Type="int" />
+          <Property Name="tecnico_id" Type="int" />
+          <Property Name="nivel_tk_1" Type="float" />
+          <Property Name="nivel_tk_2" Type="float" />
+          <Property Name="nivel_tk_contraincendio" Type="float" />
+          <Property Name="nivel_tk_chancado" Type="float" />
+          <Property Name="nivel_pm_pad" Type="float" />
+          <Property Name="nivel_pm_pls" Type="float" />
+          <Property Name="nivel_tk_botadero" Type="float" />
+          <Property Name="consumo_mina_cat_777" Type="float" />
+          <Property Name="consumo_mina_riego_vias" Type="float" />
+          <Property Name="consumo_mina_riego_caliza" Type="float" />
+          <Property Name="consumo_geologia" Type="float" />
+          <Property Name="consumo_exploracion" Type="float" />
+          <Property Name="consumo_proy_campamento" Type="float" />
+          <Property Name="consumo_proy_obras" Type="float" />
+          <Property Name="consumo_rrhh_timpure" Type="float" />
+          <Property Name="consumo_rrhh_pucamara" Type="float" />
+          <Property Name="pluviometro_lixiviacion" Type="float" />
+          <Property Name="pluviometro_planta_adr" Type="float" />
+          <Property Name="pluviomento_pozos_agua" Type="float" />
+          <Property Name="bombeo_chancado_niv_inicial" Type="float" />
+          <Property Name="bombeo_chancado_niv_final" Type="float" />
+          <Property Name="totalizador_pozo_1" Type="float" />
+          <Property Name="totalizador_pozo_2" Type="float" />
+          <Property Name="totalizador_pozo_3" Type="float" />
+          <Property Name="totalizador_pozo_4" Type="float" />
+          <Property Name="totalizador_pozo_5" Type="float" />
+          <Property Name="totalizador_pozo_6" Type="float" />
+          <Property Name="totalizador_ingreso_tk_2" Type="float" />
+          <Property Name="totalizador_make_up_planta" Type="float" />
+          <Property Name="nivel_freatico_pozo_1" Type="float" />
+          <Property Name="nivel_freatico_pozo_2" Type="float" />
+          <Property Name="nivel_freatico_pozo_3" Type="float" />
+          <Property Name="nivel_freatico_pozo_4" Type="float" />
+          <Property Name="nivel_freatico_pozo_5" Type="float" />
+          <Property Name="nivel_freatico_pozo_6" Type="float" />
+          <Property Name="variador_velocidad_pozo_1" Type="float" />
+          <Property Name="variador_velocidad_pozo_2" Type="float" />
+          <Property Name="variador_velocidad_pozo_3" Type="float" />
+          <Property Name="variador_velocidad_pozo_4" Type="float" />
+          <Property Name="variador_velocidad_pozo_5" Type="float" />
+          <Property Name="variador_velocidad_pozo_6" Type="float" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_APILAMIENTO">
+          <Key>
+            <PropertyRef Name="apilamiento_id" />
+          </Key>
+          <Property Name="apilamiento_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="turno_id" Type="int" />
+          <Property Name="tmh_mineral" Type="float" />
+          <Property Name="ley_au_mineral" Type="float" />
+          <Property Name="ley_ag_mineral" Type="float" />
+          <Property Name="tmh_rom" Type="float" />
+          <Property Name="ley_au_rom" Type="float" />
+          <Property Name="ley_ag_rom" Type="float" />
+          <Property Name="origen" Type="varchar" MaxLength="100" />
+          <Property Name="destino" Type="varchar" MaxLength="100" />
+          <Property Name="ph" Type="float" />
+          <Property Name="humedad" Type="float" />
+          <Property Name="ley_prom_au" Type="float" />
+          <Property Name="ley_prom_ag" Type="float" />
+          <Property Name="onzas_au" Type="float" />
+          <Property Name="onzas_ag" Type="float" />
+          <Property Name="densidad" Type="float" />
+          <Property Name="volumen" Type="float" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_CAMIONES">
+          <Key>
+            <PropertyRef Name="camion_id" />
+          </Key>
+          <Property Name="camion_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="turno_id" Type="int" />
+          <Property Name="tipo_equipo_id" Type="int" />
+          <Property Name="horas_maquina" Type="float" />
+          <Property Name="detalle" Type="varchar" MaxLength="200" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_CHANCADORA">
+          <Key>
+            <PropertyRef Name="chancadora_id" />
+          </Key>
+          <Property Name="chancadora_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="guardia_id" Type="int" />
+          <Property Name="turno_id" Type="int" />
+          <Property Name="ch_ore_bin_id" Type="int" />
+          <Property Name="tipo_actividad_id" Type="int" />
+          <Property Name="hora_inicio" Type="varchar" MaxLength="10" />
+          <Property Name="hora_fin" Type="varchar" MaxLength="10" />
+          <Property Name="comentarios" Type="varchar" MaxLength="400" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_CONSUMO_COMBUSTIBLE">
+          <Key>
+            <PropertyRef Name="consumo_combustible_id" />
+          </Key>
+          <Property Name="consumo_combustible_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="guardia_id" Type="int" />
+          <Property Name="turno_id" Type="int" />
+          <Property Name="equipo_id" Type="int" />
+          <Property Name="galones" Type="float" />
+          <Property Name="operador_id" Type="int" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_CONTROL_DIG_LIXIVIACION">
+          <Key>
+            <PropertyRef Name="control_dig_lix_id" />
+          </Key>
+          <Property Name="control_dig_lix_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="turno_id" Type="int" />
+          <Property Name="celda_id" Type="int" />
+          <Property Name="tecnico_lixiviacion_id" Type="int" />
+          <Property Name="tecnico_apilamiento_id" Type="int" />
+          <Property Name="nro_viajes" Type="int" />
+          <Property Name="celda_opc" Type="varchar" MaxLength="50" />
+          <Property Name="nro_camiones" Type="int" />
+          <Property Name="ley_mineral" Type="float" />
+          <Property Name="poligono" Type="float" />
+          <Property Name="pluviometro" Type="float" />
+          <Property Name="cal_viva" Type="float" />
+          <Property Name="cal_hidratada" Type="float" />
+          <Property Name="corte" Type="float" />
+          <Property Name="ripeo" Type="float" />
+          <Property Name="totalizador_tk_2" Type="float" />
+          <Property Name="nivel_tk_2" Type="float" />
+          <Property Name="presion_flujo" Type="float" />
+          <Property Name="comentarios" Type="varchar" MaxLength="200" />
+          <Property Name="flujo" Type="float" />
+          <Property Name="presion_adr" Type="float" />
+          <Property Name="presion_sump" Type="float" />
+          <Property Name="presion_925" Type="float" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_DESORCION">
+          <Key>
+            <PropertyRef Name="desorcion_id" />
+          </Key>
+          <Property Name="desorcion_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="num_fundicion" Type="varchar" MaxLength="20" />
+          <Property Name="mes" Type="varchar" MaxLength="20" />
+          <Property Name="num_desorcion" Type="int" />
+          <Property Name="num_desorcion_mes" Type="int" />
+          <Property Name="num_col_desc" Type="int" />
+          <Property Name="peso_col_desc" Type="float" />
+          <Property Name="hora_inicio" Type="varchar" MaxLength="20" />
+          <Property Name="hora_fin" Type="varchar" MaxLength="20" />
+          <Property Name="au_rico" Type="float" />
+          <Property Name="au_pobre" Type="float" />
+          <Property Name="ag_rico" Type="float" />
+          <Property Name="ag_pobre" Type="float" />
+          <Property Name="hg_rico" Type="float" />
+          <Property Name="hg_pobre" Type="float" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_ESTADO">
+          <Key>
+            <PropertyRef Name="estado_id" />
+          </Key>
+          <Property Name="estado_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="10" />
+          <Property Name="descripcion" Type="varchar" MaxLength="200" />
+          <Property Name="tipo_mantenimiento" Type="bit" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_FLUJOS_PRESIONES">
+          <Key>
+            <PropertyRef Name="flujo_presion_id" />
+          </Key>
+          <Property Name="flujo_presion_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="celda_id" Type="int" />
+          <Property Name="operador_id" Type="int" />
+          <Property Name="ingeniero_id" Type="int" />
+          <Property Name="flujo" Type="float" />
+          <Property Name="presion" Type="float" />
+          <Property Name="flujo_real" Type="float" />
+          <Property Name="presion_real" Type="float" />
+          <Property Name="flujo_corregido" Type="float" />
+          <Property Name="presion_corregida" Type="float" />
+          <Property Name="totalizador" Type="float" />
+          <Property Name="comentarios" Type="varchar" MaxLength="200" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_GUARDIA">
+          <Key>
+            <PropertyRef Name="guardia_id" />
+          </Key>
+          <Property Name="guardia_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="turno_id" Type="int" Nullable="false" />
+          <Property Name="grupo" Type="int" Nullable="false" />
+          <Property Name="jefe_guardia_id" Type="int" Nullable="false" />
+          <Property Name="operador_planta_id" Type="int" Nullable="false" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_INGRESONIVELESPOZA">
+          <Key>
+            <PropertyRef Name="ingresoNivelesPoza_id" />
+          </Key>
+          <Property Name="ingresoNivelesPoza_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="turno" Type="varchar" MaxLength="50" />
+          <Property Name="cotaPLS" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="volumePLS" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="cotaPGE" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="volumePGE" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_INGRESOPORGOTEO">
+          <Key>
+            <PropertyRef Name="ingresoporgoteo_id" />
+          </Key>
+          <Property Name="ingresoporgoteo_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codArea" Type="varchar" MaxLength="20" />
+          <Property Name="flujo" Type="int" />
+          <Property Name="tonelajeChancado" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="leyAuChancado" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="leyAgChancado" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="Tonelaje_Overliner_" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="leyAuOverliner" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="leyAgOverliner" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="fechaInicioApilamiento" Type="datetime" />
+          <Property Name="fechaFinApilamiento" Type="datetime" />
+          <Property Name="fechaInicioRiego" Type="datetime" />
+          <Property Name="fechaFinRiego" Type="datetime" />
+          <Property Name="fechaFinRealRiego" Type="datetime" />
+          <Property Name="diaRiegoAlaFecha" Type="int" />
+          <Property Name="diaPrograRiego" Type="int" />
+          <Property Name="onzasAu" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="onzasAg" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="TMS" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="celdaId" Type="int" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_LISTA">
+          <Key>
+            <PropertyRef Name="lista_id" />
+          </Key>
+          <Property Name="lista_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="lista" Type="varchar" MaxLength="100" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_LISTA_VALOR">
+          <Key>
+            <PropertyRef Name="lista_valor_id" />
+          </Key>
+          <Property Name="lista_valor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="lista_id" Type="int" />
+          <Property Name="valor" Type="varchar" MaxLength="250" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="50" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="50" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_MANT_EQUIPOS">
+          <Key>
+            <PropertyRef Name="equipo_id" />
+          </Key>
+          <Property Name="equipo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="guardia_id" Type="int" />
+          <Property Name="turno_id" Type="int" />
+          <Property Name="camiom_cargador" Type="varchar" MaxLength="200" />
+          <Property Name="tipo_actividad_id" Type="int" />
+          <Property Name="operador_id" Type="int" />
+          <Property Name="hora_inicial" Type="varchar" MaxLength="10" />
+          <Property Name="hora_fin" Type="varchar" MaxLength="10" />
+          <Property Name="tancada" Type="float" />
+          <Property Name="hora_ini_mant" Type="varchar" MaxLength="10" />
+          <Property Name="hora_fin_mant" Type="varchar" MaxLength="10" />
+          <Property Name="comentarios" Type="varchar" MaxLength="400" />
+          <Property Name="equipo_cargio_id" Type="int" />
+          <Property Name="material_id" Type="int" />
+          <Property Name="zona_carguio" Type="int" />
+          <Property Name="punto_descarga" Type="int" />
+          <Property Name="numero_viajes" Type="int" />
+          <Property Name="produccion_total" Type="float" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_MANT_PRODUCCION_X_HORA">
+          <Key>
+            <PropertyRef Name="produccion_hora_id" />
+          </Key>
+          <Property Name="produccion_hora_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="guardia_id" Type="int" />
+          <Property Name="turno_id" Type="int" />
+          <Property Name="hora" Type="varchar" MaxLength="10" />
+          <Property Name="camion" Type="varchar" MaxLength="200" />
+          <Property Name="toneladas" Type="float" />
+          <Property Name="viajes" Type="int" />
+          <Property Name="material_id" Type="int" />
+          <Property Name="ruta_id" Type="int" />
+          <Property Name="tancada" Type="float" />
+          <Property Name="zona_cargio_id" Type="int" />
+          <Property Name="equipo_cargio_id" Type="int" />
+          <Property Name="ton1" Type="float" />
+          <Property Name="ton2" Type="float" />
+          <Property Name="ton3" Type="float" />
+          <Property Name="ton4" Type="float" />
+          <Property Name="ton5" Type="float" />
+          <Property Name="ton6" Type="float" />
+          <Property Name="ton7" Type="float" />
+          <Property Name="ton8" Type="float" />
+          <Property Name="ton9" Type="float" />
+          <Property Name="ton10" Type="float" />
+          <Property Name="ton11" Type="float" />
+          <Property Name="ton12" Type="float" />
+          <Property Name="ton13" Type="float" />
+          <Property Name="ton14" Type="float" />
+          <Property Name="ton15" Type="float" />
+          <Property Name="ton16" Type="float" />
+          <Property Name="ton17" Type="float" />
+          <Property Name="ton18" Type="float" />
+          <Property Name="ton19" Type="float" />
+          <Property Name="ton20" Type="float" />
+          <Property Name="ton21" Type="float" />
+          <Property Name="ton22" Type="float" />
+          <Property Name="ton23" Type="float" />
+          <Property Name="ton24" Type="float" />
+          <Property Name="ton25" Type="float" />
+          <Property Name="ton26" Type="float" />
+          <Property Name="ton27" Type="float" />
+          <Property Name="ton28" Type="float" />
+          <Property Name="ton29" Type="float" />
+          <Property Name="ton30" Type="float" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_OPCION">
+          <Key>
+            <PropertyRef Name="opcion_id" />
+          </Key>
+          <Property Name="opcion_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="opcion_cod" Type="varchar" MaxLength="20" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_PARADA">
+          <Key>
+            <PropertyRef Name="parada_id" />
+          </Key>
+          <Property Name="parada_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="area_id" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="turno_id" Type="int" Nullable="false" />
+          <Property Name="hora_inicio" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="hora_fin" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="duracion" Type="float" Nullable="false" />
+          <Property Name="tipo_parada_id" Type="int" Nullable="false" />
+          <Property Name="sub_tipo_parada_id" Type="int" Nullable="false" />
+          <Property Name="estado_id" Type="int" Nullable="false" />
+          <Property Name="serie_id" Type="int" Nullable="false" />
+          <Property Name="comentario" Type="varchar" MaxLength="500" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_PARAMETRO">
+          <Key>
+            <PropertyRef Name="parametro_id" />
+          </Key>
+          <Property Name="parametro_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="horas" Type="float" />
+          <Property Name="total_ini" Type="float" />
+          <Property Name="total_fin" Type="float" />
+          <Property Name="flujo_dia" Type="float" />
+          <Property Name="nivel_poza_pls" Type="float" />
+          <Property Name="nivel_poza_may" Type="float" />
+          <Property Name="vol_poza_pls" Type="float" />
+          <Property Name="vol_poza_may" Type="float" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_PROCESO">
+          <Key>
+            <PropertyRef Name="proceso_id" />
+          </Key>
+          <Property Name="proceso_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="anho" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="mes" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="mcl_fecha_inicio" Type="date" Nullable="false" />
+          <Property Name="mcl_fecha_fin" Type="date" Nullable="false" />
+          <Property Name="adr_fecha_inicio" Type="date" Nullable="false" />
+          <Property Name="adr_fecha_fin" Type="date" Nullable="false" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_PROD_CHANCADORA">
+          <Key>
+            <PropertyRef Name="prod_chancadora_id" />
+          </Key>
+          <Property Name="prod_chancadora_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="produccion_id" Type="int" />
+          <Property Name="fecha_op" Type="date" />
+          <Property Name="turno_id" Type="int" />
+          <Property Name="viajes_ch" Type="int" />
+          <Property Name="ton_ch_cam" Type="float" />
+          <Property Name="ton_ch_ox" Type="float" />
+          <Property Name="tmh_ch_ox" Type="float" />
+          <Property Name="ton_bal_faja" Type="float" />
+          <Property Name="tm_acum_ini_ch" Type="float" />
+          <Property Name="tm_acum_fin_ch" Type="float" />
+          <Property Name="tmh_ch_bal" Type="float" />
+          <Property Name="h_op_ch" Type="float" />
+          <Property Name="horas" Type="float" />
+          <Property Name="minutos" Type="float" />
+          <Property Name="h_mantto_ch" Type="float" />
+          <Property Name="horas_mantto" Type="float" />
+          <Property Name="minutos_mantto" Type="float" />
+          <Property Name="h_operacion" Type="float" />
+          <Property Name="horas_operacion" Type="float" />
+          <Property Name="minutos_operacion" Type="float" />
+          <Property Name="h_calendario" Type="float" />
+          <Property Name="porc_d_ch" Type="float" />
+          <Property Name="porc_ud_ch" Type="float" />
+          <Property Name="porc_u_ch" Type="float" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_PROD_ORE_BIN">
+          <Key>
+            <PropertyRef Name="prod_ore_bin_id" />
+          </Key>
+          <Property Name="prod_ore_bin_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="produccion_id" Type="int" Nullable="false" />
+          <Property Name="fecha_op" Type="date" />
+          <Property Name="turno_id" Type="int" />
+          <Property Name="viajes_ob" Type="int" />
+          <Property Name="ton_ob_cam" Type="float" />
+          <Property Name="ton_ob_ox" Type="float" />
+          <Property Name="ton_bal_faja" Type="float" />
+          <Property Name="tm_acum_ini_ob" Type="float" />
+          <Property Name="tm_acum_fin_ob" Type="float" />
+          <Property Name="tmh_ob_bal" Type="float" />
+          <Property Name="h_op_ob" Type="float" />
+          <Property Name="horas" Type="float" />
+          <Property Name="minutos" Type="float" />
+          <Property Name="h_mantto_ob" Type="float" />
+          <Property Name="horas_mantto" Type="float" />
+          <Property Name="minutos_mantto" Type="float" />
+          <Property Name="h_operacion" Type="float" />
+          <Property Name="horas_operacion" Type="float" />
+          <Property Name="minutos_operacion" Type="float" />
+          <Property Name="h_calendario" Type="float" />
+          <Property Name="porc_d_ob" Type="float" />
+          <Property Name="porc_ud_ob" Type="float" />
+          <Property Name="porc_u_ob" Type="float" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_PRODUCCION">
+          <Key>
+            <PropertyRef Name="produccion_id" />
+          </Key>
+          <Property Name="produccion_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha_op" Type="date" />
+          <Property Name="turno_id" Type="int" />
+          <Property Name="tm_acum_faja1" Type="float" />
+          <Property Name="tm_acum_ob" Type="float" />
+          <Property Name="mps_porc" Type="float" />
+          <Property Name="presion_ntg" Type="float" />
+          <Property Name="rpm_main_shaft" Type="float" />
+          <Property Name="amp_chancadora" Type="float" />
+          <Property Name="f_aceite_sup" Type="float" />
+          <Property Name="f_aceite_inf" Type="float" />
+          <Property Name="rpm_apron_feeder" Type="float" />
+          <Property Name="a_apron_feeder" Type="float" />
+          <Property Name="a_faja_uno" Type="float" />
+          <Property Name="a_faja_dos" Type="float" />
+          <Property Name="a_faja_tres" Type="float" />
+          <Property Name="tpm" Type="varchar" MaxLength="200" />
+          <Property Name="poligonos" Type="varchar" MaxLength="200" />
+          <Property Name="celda" Type="varchar" MaxLength="200" />
+          <Property Name="frec_av_a" Type="float" />
+          <Property Name="frec_av_b" Type="float" />
+          <Property Name="frec_av_c" Type="float" />
+          <Property Name="pr_hidra_uno" Type="float" />
+          <Property Name="pr_hidra_dos" Type="float" />
+          <Property Name="tk_verde" Type="float" />
+          <Property Name="tk_rojo" Type="float" />
+          <Property Name="stock_pile" Type="float" />
+          <Property Name="ratio_cal" Type="float" />
+          <Property Name="silo_a" Type="float" />
+          <Property Name="silo_b" Type="float" />
+          <Property Name="observacion" Type="varchar" MaxLength="500" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_ROL">
+          <Key>
+            <PropertyRef Name="rol_id" />
+          </Key>
+          <Property Name="rol_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="20" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_ROL_OPCION">
+          <Key>
+            <PropertyRef Name="rol_id" />
+            <PropertyRef Name="opcion_id" />
+          </Key>
+          <Property Name="rol_id" Type="int" Nullable="false" />
+          <Property Name="opcion_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MS_TIPO_PARADA">
+          <Key>
+            <PropertyRef Name="tipo_parada_id" />
+          </Key>
+          <Property Name="tipo_parada_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo_parada" Type="int" Nullable="false" />
+          <Property Name="sub_tipo_parada" Type="int" Nullable="false" />
+          <Property Name="codigo_serie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcion_serie" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="estado_serie" Type="int" />
+          <Property Name="observaciones" Type="varchar" MaxLength="500" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_TURNO_LIX">
+          <Key>
+            <PropertyRef Name="turno_lix_id" />
+          </Key>
+          <Property Name="turno_lix_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="turno_id" Type="int" />
+          <Property Name="poza_pls" Type="float" />
+          <Property Name="lluvia" Type="float" />
+          <Property Name="ley_oro_m1_tren_1" Type="float" />
+          <Property Name="ley_oro_m1_tren_2" Type="float" />
+          <Property Name="ley_oro_m2_tren_1" Type="float" />
+          <Property Name="ley_oro_m2_tren_2" Type="float" />
+          <Property Name="ley_oro_m3" Type="float" />
+          <Property Name="ley_plata_m1_tren_1" Type="float" />
+          <Property Name="ley_plata_m1_tren_2" Type="float" />
+          <Property Name="ley_plata_m2_tren_1" Type="float" />
+          <Property Name="ley_plata_m2_tren_2" Type="float" />
+          <Property Name="flujo_adr_tren_1" Type="float" />
+          <Property Name="flujo_adr_tren_2" Type="float" />
+          <Property Name="flujo_lixiviacion" Type="float" />
+          <Property Name="factor" Type="float" />
+          <Property Name="flujo_adr_tren_1_calc" Type="float" />
+          <Property Name="flujo_adr_tren_2_calc" Type="float" />
+          <Property Name="flujo_lixiviacion_calc" Type="float" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_USUARIO">
+          <Key>
+            <PropertyRef Name="usuario_id" />
+          </Key>
+          <Property Name="usuario_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="20" />
+          <Property Name="password" Type="varchar" MaxLength="20" />
+          <Property Name="nombres" Type="varchar" MaxLength="100" />
+          <Property Name="correo" Type="varchar" MaxLength="50" />
+          <Property Name="activo" Type="bit" />
+          <Property Name="usuario_crea" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_crea" Type="datetime" />
+          <Property Name="usuario_mod" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_mod" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MS_USUARIO_ROL">
+          <Key>
+            <PropertyRef Name="usuario_id" />
+            <PropertyRef Name="rol_id" />
+          </Key>
+          <Property Name="usuario_id" Type="int" Nullable="false" />
+          <Property Name="rol_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MinsurRepoModelStoreContainer">
+          <EntitySet Name="MS_ADSORCION" EntityType="Self.MS_ADSORCION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_AGUAS_OPERACIONES" EntityType="Self.MS_AGUAS_OPERACIONES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_APILAMIENTO" EntityType="Self.MS_APILAMIENTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_CAMIONES" EntityType="Self.MS_CAMIONES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_CHANCADORA" EntityType="Self.MS_CHANCADORA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_CONSUMO_COMBUSTIBLE" EntityType="Self.MS_CONSUMO_COMBUSTIBLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_CONTROL_DIG_LIXIVIACION" EntityType="Self.MS_CONTROL_DIG_LIXIVIACION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_DESORCION" EntityType="Self.MS_DESORCION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_ESTADO" EntityType="Self.MS_ESTADO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_FLUJOS_PRESIONES" EntityType="Self.MS_FLUJOS_PRESIONES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_GUARDIA" EntityType="Self.MS_GUARDIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_INGRESONIVELESPOZA" EntityType="Self.MS_INGRESONIVELESPOZA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_INGRESOPORGOTEO" EntityType="Self.MS_INGRESOPORGOTEO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_LISTA" EntityType="Self.MS_LISTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_LISTA_VALOR" EntityType="Self.MS_LISTA_VALOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_MANT_EQUIPOS" EntityType="Self.MS_MANT_EQUIPOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_MANT_PRODUCCION_X_HORA" EntityType="Self.MS_MANT_PRODUCCION_X_HORA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_OPCION" EntityType="Self.MS_OPCION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_PARADA" EntityType="Self.MS_PARADA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_PARAMETRO" EntityType="Self.MS_PARAMETRO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_PROCESO" EntityType="Self.MS_PROCESO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_PROD_CHANCADORA" EntityType="Self.MS_PROD_CHANCADORA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_PROD_ORE_BIN" EntityType="Self.MS_PROD_ORE_BIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_PRODUCCION" EntityType="Self.MS_PRODUCCION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_ROL" EntityType="Self.MS_ROL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_ROL_OPCION" EntityType="Self.MS_ROL_OPCION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_TIPO_PARADA" EntityType="Self.MS_TIPO_PARADA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_TURNO_LIX" EntityType="Self.MS_TURNO_LIX" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_USUARIO" EntityType="Self.MS_USUARIO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_USUARIO_ROL" EntityType="Self.MS_USUARIO_ROL" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MinsurRepoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MS_ADSORCION">
+          <Key>
+            <PropertyRef Name="adsorcion_id" />
+          </Key>
+          <Property Name="adsorcion_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="horas" Type="Int32" />
+          <Property Name="au_ing_n1" Type="Double" />
+          <Property Name="au_ing_n2" Type="Double" />
+          <Property Name="au_sal_n1" Type="Double" />
+          <Property Name="au_sal_n2" Type="Double" />
+          <Property Name="ag_ing_n1" Type="Double" />
+          <Property Name="ag_ing_n2" Type="Double" />
+          <Property Name="ag_sal_n1" Type="Double" />
+          <Property Name="ag_sal_n2" Type="Double" />
+          <Property Name="flujo_ini_1" Type="Double" />
+          <Property Name="flujo_ini_2" Type="Double" />
+          <Property Name="flujo_fin_1" Type="Double" />
+          <Property Name="flujo_fin_2" Type="Double" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_CHANCADORA">
+          <Key>
+            <PropertyRef Name="chancadora_id" />
+          </Key>
+          <Property Name="chancadora_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="guardia_id" Type="Int32" />
+          <Property Name="turno_id" Type="Int32" />
+          <Property Name="ch_ore_bin_id" Type="Int32" />
+          <Property Name="tipo_actividad_id" Type="Int32" />
+          <Property Name="hora_inicio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="hora_fin" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="comentarios" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_CONSUMO_COMBUSTIBLE">
+          <Key>
+            <PropertyRef Name="consumo_combustible_id" />
+          </Key>
+          <Property Name="consumo_combustible_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="guardia_id" Type="Int32" />
+          <Property Name="turno_id" Type="Int32" />
+          <Property Name="equipo_id" Type="Int32" />
+          <Property Name="galones" Type="Double" />
+          <Property Name="operador_id" Type="Int32" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_DESORCION">
+          <Key>
+            <PropertyRef Name="desorcion_id" />
+          </Key>
+          <Property Name="desorcion_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="num_fundicion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="mes" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="num_desorcion" Type="Int32" />
+          <Property Name="num_desorcion_mes" Type="Int32" />
+          <Property Name="num_col_desc" Type="Int32" />
+          <Property Name="peso_col_desc" Type="Double" />
+          <Property Name="hora_inicio" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="hora_fin" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="au_rico" Type="Double" />
+          <Property Name="au_pobre" Type="Double" />
+          <Property Name="ag_rico" Type="Double" />
+          <Property Name="ag_pobre" Type="Double" />
+          <Property Name="hg_rico" Type="Double" />
+          <Property Name="hg_pobre" Type="Double" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_ESTADO">
+          <Key>
+            <PropertyRef Name="estado_id" />
+          </Key>
+          <Property Name="estado_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="tipo_mantenimiento" Type="Boolean" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_GUARDIA">
+          <Key>
+            <PropertyRef Name="guardia_id" />
+          </Key>
+          <Property Name="guardia_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="turno_id" Type="Int32" Nullable="false" />
+          <Property Name="grupo" Type="Int32" Nullable="false" />
+          <Property Name="jefe_guardia_id" Type="Int32" Nullable="false" />
+          <Property Name="operador_planta_id" Type="Int32" Nullable="false" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_LISTA">
+          <Key>
+            <PropertyRef Name="lista_id" />
+          </Key>
+          <Property Name="lista_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="lista" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_LISTA_VALOR">
+          <Key>
+            <PropertyRef Name="lista_valor_id" />
+          </Key>
+          <Property Name="lista_valor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="lista_id" Type="Int32" />
+          <Property Name="valor" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_MANT_EQUIPOS">
+          <Key>
+            <PropertyRef Name="equipo_id" />
+          </Key>
+          <Property Name="equipo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="guardia_id" Type="Int32" />
+          <Property Name="turno_id" Type="Int32" />
+          <Property Name="camiom_cargador" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="tipo_actividad_id" Type="Int32" />
+          <Property Name="operador_id" Type="Int32" />
+          <Property Name="hora_inicial" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="hora_fin" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="tancada" Type="Double" />
+          <Property Name="hora_ini_mant" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="hora_fin_mant" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="comentarios" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="equipo_cargio_id" Type="Int32" />
+          <Property Name="material_id" Type="Int32" />
+          <Property Name="zona_carguio" Type="Int32" />
+          <Property Name="punto_descarga" Type="Int32" />
+          <Property Name="numero_viajes" Type="Int32" />
+          <Property Name="produccion_total" Type="Double" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_MANT_PRODUCCION_X_HORA">
+          <Key>
+            <PropertyRef Name="produccion_hora_id" />
+          </Key>
+          <Property Name="produccion_hora_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="guardia_id" Type="Int32" />
+          <Property Name="turno_id" Type="Int32" />
+          <Property Name="hora" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="camion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="toneladas" Type="Double" />
+          <Property Name="viajes" Type="Int32" />
+          <Property Name="material_id" Type="Int32" />
+          <Property Name="ruta_id" Type="Int32" />
+          <Property Name="tancada" Type="Double" />
+          <Property Name="zona_cargio_id" Type="Int32" />
+          <Property Name="equipo_cargio_id" Type="Int32" />
+          <Property Name="ton1" Type="Double" />
+          <Property Name="ton2" Type="Double" />
+          <Property Name="ton3" Type="Double" />
+          <Property Name="ton4" Type="Double" />
+          <Property Name="ton5" Type="Double" />
+          <Property Name="ton6" Type="Double" />
+          <Property Name="ton7" Type="Double" />
+          <Property Name="ton8" Type="Double" />
+          <Property Name="ton9" Type="Double" />
+          <Property Name="ton10" Type="Double" />
+          <Property Name="ton11" Type="Double" />
+          <Property Name="ton12" Type="Double" />
+          <Property Name="ton13" Type="Double" />
+          <Property Name="ton14" Type="Double" />
+          <Property Name="ton15" Type="Double" />
+          <Property Name="ton16" Type="Double" />
+          <Property Name="ton17" Type="Double" />
+          <Property Name="ton18" Type="Double" />
+          <Property Name="ton19" Type="Double" />
+          <Property Name="ton20" Type="Double" />
+          <Property Name="ton21" Type="Double" />
+          <Property Name="ton22" Type="Double" />
+          <Property Name="ton23" Type="Double" />
+          <Property Name="ton24" Type="Double" />
+          <Property Name="ton25" Type="Double" />
+          <Property Name="ton26" Type="Double" />
+          <Property Name="ton27" Type="Double" />
+          <Property Name="ton28" Type="Double" />
+          <Property Name="ton29" Type="Double" />
+          <Property Name="ton30" Type="Double" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_PARADA">
+          <Key>
+            <PropertyRef Name="parada_id" />
+          </Key>
+          <Property Name="parada_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="area_id" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="turno_id" Type="Int32" Nullable="false" />
+          <Property Name="hora_inicio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hora_fin" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="duracion" Type="Double" Nullable="false" />
+          <Property Name="tipo_parada_id" Type="Int32" Nullable="false" />
+          <Property Name="sub_tipo_parada_id" Type="Int32" Nullable="false" />
+          <Property Name="estado_id" Type="Int32" Nullable="false" />
+          <Property Name="serie_id" Type="Int32" Nullable="false" />
+          <Property Name="comentario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_PARAMETRO">
+          <Key>
+            <PropertyRef Name="parametro_id" />
+          </Key>
+          <Property Name="parametro_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="horas" Type="Double" />
+          <Property Name="total_ini" Type="Double" />
+          <Property Name="total_fin" Type="Double" />
+          <Property Name="flujo_dia" Type="Double" />
+          <Property Name="nivel_poza_pls" Type="Double" />
+          <Property Name="nivel_poza_may" Type="Double" />
+          <Property Name="vol_poza_pls" Type="Double" />
+          <Property Name="vol_poza_may" Type="Double" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_PROCESO">
+          <Key>
+            <PropertyRef Name="proceso_id" />
+          </Key>
+          <Property Name="proceso_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="anho" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mes" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mcl_fecha_inicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="mcl_fecha_fin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="adr_fecha_inicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="adr_fecha_fin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_TIPO_PARADA">
+          <Key>
+            <PropertyRef Name="tipo_parada_id" />
+          </Key>
+          <Property Name="tipo_parada_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo_parada" Type="Int32" Nullable="false" />
+          <Property Name="sub_tipo_parada" Type="Int32" Nullable="false" />
+          <Property Name="codigo_serie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion_serie" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estado_serie" Type="Int32" />
+          <Property Name="observaciones" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="MinsurRepoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MS_ADSORCION" EntityType="Self.MS_ADSORCION" />
+          <EntitySet Name="MS_CHANCADORA" EntityType="Self.MS_CHANCADORA" />
+          <EntitySet Name="MS_CONSUMO_COMBUSTIBLE" EntityType="Self.MS_CONSUMO_COMBUSTIBLE" />
+          <EntitySet Name="MS_DESORCION" EntityType="Self.MS_DESORCION" />
+          <EntitySet Name="MS_ESTADO" EntityType="Self.MS_ESTADO" />
+          <EntitySet Name="MS_GUARDIA" EntityType="Self.MS_GUARDIA" />
+          <EntitySet Name="MS_LISTA" EntityType="Self.MS_LISTA" />
+          <EntitySet Name="MS_LISTA_VALOR" EntityType="Self.MS_LISTA_VALOR" />
+          <EntitySet Name="MS_MANT_EQUIPOS" EntityType="Self.MS_MANT_EQUIPOS" />
+          <EntitySet Name="MS_MANT_PRODUCCION_X_HORA" EntityType="Self.MS_MANT_PRODUCCION_X_HORA" />
+          <EntitySet Name="MS_PARADA" EntityType="Self.MS_PARADA" />
+          <EntitySet Name="MS_PARAMETRO" EntityType="Self.MS_PARAMETRO" />
+          <EntitySet Name="MS_PROCESO" EntityType="Self.MS_PROCESO" />
+          <EntitySet Name="MS_TIPO_PARADA" EntityType="Self.MS_TIPO_PARADA" />
+          <EntitySet Name="MS_INGRESONIVELESPOZA" EntityType="MinsurRepoModel.MS_INGRESONIVELESPOZA" />
+          <EntitySet Name="MS_INGRESOPORGOTEO" EntityType="MinsurRepoModel.MS_INGRESOPORGOTEO" />
+          <EntitySet Name="MS_AGUAS_OPERACIONES" EntityType="MinsurRepoModel.MS_AGUAS_OPERACIONES" />
+          <EntitySet Name="MS_APILAMIENTO" EntityType="MinsurRepoModel.MS_APILAMIENTO" />
+          <EntitySet Name="MS_CAMIONES" EntityType="MinsurRepoModel.MS_CAMIONES" />
+          <EntitySet Name="MS_FLUJOS_PRESIONES" EntityType="MinsurRepoModel.MS_FLUJOS_PRESIONES" />
+          <EntitySet Name="MS_OPCION" EntityType="MinsurRepoModel.MS_OPCION" />
+          <EntitySet Name="MS_ROL" EntityType="MinsurRepoModel.MS_ROL" />
+          <EntitySet Name="MS_ROL_OPCION" EntityType="MinsurRepoModel.MS_ROL_OPCION" />
+          <EntitySet Name="MS_USUARIO" EntityType="MinsurRepoModel.MS_USUARIO" />
+          <EntitySet Name="MS_USUARIO_ROL" EntityType="MinsurRepoModel.MS_USUARIO_ROL" />
+          <EntitySet Name="MS_TURNO_LIX" EntityType="MinsurRepoModel.MS_TURNO_LIX" />
+          <EntitySet Name="MS_CONTROL_DIG_LIXIVIACION" EntityType="MinsurRepoModel.MS_CONTROL_DIG_LIXIVIACION" />
+          <EntitySet Name="MS_PROD_CHANCADORA" EntityType="MinsurRepoModel.MS_PROD_CHANCADORA" />
+          <EntitySet Name="MS_PROD_ORE_BIN" EntityType="MinsurRepoModel.MS_PROD_ORE_BIN" />
+          <EntitySet Name="MS_PRODUCCION" EntityType="MinsurRepoModel.MS_PRODUCCION" />
+          </EntityContainer>
+        <EntityType Name="MS_INGRESONIVELESPOZA">
+          <Key>
+            <PropertyRef Name="ingresoNivelesPoza_id" />
+          </Key>
+          <Property Name="ingresoNivelesPoza_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="turno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cotaPLS" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="volumePLS" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="cotaPGE" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="volumePGE" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_INGRESOPORGOTEO">
+          <Key>
+            <PropertyRef Name="ingresoporgoteo_id" />
+          </Key>
+          <Property Name="ingresoporgoteo_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codArea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="flujo" Type="Int32" />
+          <Property Name="tonelajeChancado" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="leyAuChancado" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="leyAgChancado" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="Tonelaje_Overliner_" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="leyAuOverliner" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="leyAgOverliner" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="fechaInicioApilamiento" Type="DateTime" Precision="3" />
+          <Property Name="fechaFinApilamiento" Type="DateTime" Precision="3" />
+          <Property Name="fechaInicioRiego" Type="DateTime" Precision="3" />
+          <Property Name="fechaFinRiego" Type="DateTime" Precision="3" />
+          <Property Name="fechaFinRealRiego" Type="DateTime" Precision="3" />
+          <Property Name="diaRiegoAlaFecha" Type="Int32" />
+          <Property Name="diaPrograRiego" Type="Int32" />
+          <Property Name="onzasAu" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="onzasAg" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="TMS" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="celdaId" Type="Int32" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_AGUAS_OPERACIONES">
+          <Key>
+            <PropertyRef Name="agua_op_id" />
+          </Key>
+          <Property Name="agua_op_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="turno_id" Type="Int32" />
+          <Property Name="tecnico_id" Type="Int32" />
+          <Property Name="nivel_tk_1" Type="Double" />
+          <Property Name="nivel_tk_2" Type="Double" />
+          <Property Name="nivel_tk_contraincendio" Type="Double" />
+          <Property Name="nivel_tk_chancado" Type="Double" />
+          <Property Name="nivel_pm_pad" Type="Double" />
+          <Property Name="nivel_pm_pls" Type="Double" />
+          <Property Name="nivel_tk_botadero" Type="Double" />
+          <Property Name="consumo_mina_cat_777" Type="Double" />
+          <Property Name="consumo_mina_riego_vias" Type="Double" />
+          <Property Name="consumo_mina_riego_caliza" Type="Double" />
+          <Property Name="consumo_geologia" Type="Double" />
+          <Property Name="consumo_exploracion" Type="Double" />
+          <Property Name="consumo_proy_campamento" Type="Double" />
+          <Property Name="consumo_proy_obras" Type="Double" />
+          <Property Name="consumo_rrhh_timpure" Type="Double" />
+          <Property Name="consumo_rrhh_pucamara" Type="Double" />
+          <Property Name="pluviometro_lixiviacion" Type="Double" />
+          <Property Name="pluviometro_planta_adr" Type="Double" />
+          <Property Name="pluviomento_pozos_agua" Type="Double" />
+          <Property Name="bombeo_chancado_niv_inicial" Type="Double" />
+          <Property Name="bombeo_chancado_niv_final" Type="Double" />
+          <Property Name="totalizador_pozo_1" Type="Double" />
+          <Property Name="totalizador_pozo_2" Type="Double" />
+          <Property Name="totalizador_pozo_3" Type="Double" />
+          <Property Name="totalizador_pozo_4" Type="Double" />
+          <Property Name="totalizador_pozo_5" Type="Double" />
+          <Property Name="totalizador_pozo_6" Type="Double" />
+          <Property Name="totalizador_ingreso_tk_2" Type="Double" />
+          <Property Name="totalizador_make_up_planta" Type="Double" />
+          <Property Name="nivel_freatico_pozo_1" Type="Double" />
+          <Property Name="nivel_freatico_pozo_2" Type="Double" />
+          <Property Name="nivel_freatico_pozo_3" Type="Double" />
+          <Property Name="nivel_freatico_pozo_4" Type="Double" />
+          <Property Name="nivel_freatico_pozo_5" Type="Double" />
+          <Property Name="nivel_freatico_pozo_6" Type="Double" />
+          <Property Name="variador_velocidad_pozo_1" Type="Double" />
+          <Property Name="variador_velocidad_pozo_2" Type="Double" />
+          <Property Name="variador_velocidad_pozo_3" Type="Double" />
+          <Property Name="variador_velocidad_pozo_4" Type="Double" />
+          <Property Name="variador_velocidad_pozo_5" Type="Double" />
+          <Property Name="variador_velocidad_pozo_6" Type="Double" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_APILAMIENTO">
+          <Key>
+            <PropertyRef Name="apilamiento_id" />
+          </Key>
+          <Property Name="apilamiento_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="turno_id" Type="Int32" />
+          <Property Name="tmh_mineral" Type="Double" />
+          <Property Name="ley_au_mineral" Type="Double" />
+          <Property Name="ley_ag_mineral" Type="Double" />
+          <Property Name="tmh_rom" Type="Double" />
+          <Property Name="ley_au_rom" Type="Double" />
+          <Property Name="ley_ag_rom" Type="Double" />
+          <Property Name="origen" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="destino" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ph" Type="Double" />
+          <Property Name="humedad" Type="Double" />
+          <Property Name="ley_prom_au" Type="Double" />
+          <Property Name="ley_prom_ag" Type="Double" />
+          <Property Name="onzas_au" Type="Double" />
+          <Property Name="onzas_ag" Type="Double" />
+          <Property Name="densidad" Type="Double" />
+          <Property Name="volumen" Type="Double" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_CAMIONES">
+          <Key>
+            <PropertyRef Name="camion_id" />
+          </Key>
+          <Property Name="camion_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="turno_id" Type="Int32" />
+          <Property Name="tipo_equipo_id" Type="Int32" />
+          <Property Name="horas_maquina" Type="Double" />
+          <Property Name="detalle" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_FLUJOS_PRESIONES">
+          <Key>
+            <PropertyRef Name="flujo_presion_id" />
+          </Key>
+          <Property Name="flujo_presion_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="celda_id" Type="Int32" />
+          <Property Name="operador_id" Type="Int32" />
+          <Property Name="ingeniero_id" Type="Int32" />
+          <Property Name="flujo" Type="Double" />
+          <Property Name="presion" Type="Double" />
+          <Property Name="flujo_real" Type="Double" />
+          <Property Name="presion_real" Type="Double" />
+          <Property Name="flujo_corregido" Type="Double" />
+          <Property Name="presion_corregida" Type="Double" />
+          <Property Name="totalizador" Type="Double" />
+          <Property Name="comentarios" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_OPCION">
+          <Key>
+            <PropertyRef Name="opcion_id" />
+          </Key>
+          <Property Name="opcion_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="opcion_cod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_ROL">
+          <Key>
+            <PropertyRef Name="rol_id" />
+          </Key>
+          <Property Name="rol_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_ROL_OPCION">
+          <Key>
+            <PropertyRef Name="rol_id" />
+            <PropertyRef Name="opcion_id" />
+          </Key>
+          <Property Name="rol_id" Type="Int32" Nullable="false" />
+          <Property Name="opcion_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MS_USUARIO">
+          <Key>
+            <PropertyRef Name="usuario_id" />
+          </Key>
+          <Property Name="usuario_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="nombres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_USUARIO_ROL">
+          <Key>
+            <PropertyRef Name="usuario_id" />
+            <PropertyRef Name="rol_id" />
+          </Key>
+          <Property Name="usuario_id" Type="Int32" Nullable="false" />
+          <Property Name="rol_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MS_TURNO_LIX">
+          <Key>
+            <PropertyRef Name="turno_lix_id" />
+          </Key>
+          <Property Name="turno_lix_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="turno_id" Type="Int32" />
+          <Property Name="poza_pls" Type="Double" />
+          <Property Name="lluvia" Type="Double" />
+          <Property Name="ley_oro_m1_tren_1" Type="Double" />
+          <Property Name="ley_oro_m1_tren_2" Type="Double" />
+          <Property Name="ley_oro_m2_tren_1" Type="Double" />
+          <Property Name="ley_oro_m2_tren_2" Type="Double" />
+          <Property Name="ley_oro_m3" Type="Double" />
+          <Property Name="ley_plata_m1_tren_1" Type="Double" />
+          <Property Name="ley_plata_m1_tren_2" Type="Double" />
+          <Property Name="ley_plata_m2_tren_1" Type="Double" />
+          <Property Name="ley_plata_m2_tren_2" Type="Double" />
+          <Property Name="flujo_adr_tren_1" Type="Double" />
+          <Property Name="flujo_adr_tren_2" Type="Double" />
+          <Property Name="flujo_lixiviacion" Type="Double" />
+          <Property Name="factor" Type="Double" />
+          <Property Name="flujo_adr_tren_1_calc" Type="Double" />
+          <Property Name="flujo_adr_tren_2_calc" Type="Double" />
+          <Property Name="flujo_lixiviacion_calc" Type="Double" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_CONTROL_DIG_LIXIVIACION">
+          <Key>
+            <PropertyRef Name="control_dig_lix_id" />
+          </Key>
+          <Property Name="control_dig_lix_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="turno_id" Type="Int32" />
+          <Property Name="celda_id" Type="Int32" />
+          <Property Name="tecnico_lixiviacion_id" Type="Int32" />
+          <Property Name="tecnico_apilamiento_id" Type="Int32" />
+          <Property Name="nro_viajes" Type="Int32" />
+          <Property Name="celda_opc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nro_camiones" Type="Int32" />
+          <Property Name="ley_mineral" Type="Double" />
+          <Property Name="poligono" Type="Double" />
+          <Property Name="pluviometro" Type="Double" />
+          <Property Name="cal_viva" Type="Double" />
+          <Property Name="cal_hidratada" Type="Double" />
+          <Property Name="corte" Type="Double" />
+          <Property Name="ripeo" Type="Double" />
+          <Property Name="totalizador_tk_2" Type="Double" />
+          <Property Name="nivel_tk_2" Type="Double" />
+          <Property Name="presion_flujo" Type="Double" />
+          <Property Name="comentarios" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="flujo" Type="Double" />
+          <Property Name="presion_adr" Type="Double" />
+          <Property Name="presion_sump" Type="Double" />
+          <Property Name="presion_925" Type="Double" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_PROD_CHANCADORA">
+          <Key>
+            <PropertyRef Name="prod_chancadora_id" />
+          </Key>
+          <Property Name="prod_chancadora_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="produccion_id" Type="Int32" />
+          <Property Name="fecha_op" Type="DateTime" Precision="0" />
+          <Property Name="turno_id" Type="Int32" />
+          <Property Name="viajes_ch" Type="Int32" />
+          <Property Name="ton_ch_cam" Type="Double" />
+          <Property Name="ton_ch_ox" Type="Double" />
+          <Property Name="tmh_ch_ox" Type="Double" />
+          <Property Name="ton_bal_faja" Type="Double" />
+          <Property Name="tm_acum_ini_ch" Type="Double" />
+          <Property Name="tm_acum_fin_ch" Type="Double" />
+          <Property Name="tmh_ch_bal" Type="Double" />
+          <Property Name="h_op_ch" Type="Double" />
+          <Property Name="horas" Type="Double" />
+          <Property Name="minutos" Type="Double" />
+          <Property Name="h_mantto_ch" Type="Double" />
+          <Property Name="horas_mantto" Type="Double" />
+          <Property Name="minutos_mantto" Type="Double" />
+          <Property Name="h_operacion" Type="Double" />
+          <Property Name="horas_operacion" Type="Double" />
+          <Property Name="minutos_operacion" Type="Double" />
+          <Property Name="h_calendario" Type="Double" />
+          <Property Name="porc_d_ch" Type="Double" />
+          <Property Name="porc_ud_ch" Type="Double" />
+          <Property Name="porc_u_ch" Type="Double" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_PROD_ORE_BIN">
+          <Key>
+            <PropertyRef Name="prod_ore_bin_id" />
+          </Key>
+          <Property Name="prod_ore_bin_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="produccion_id" Type="Int32" Nullable="false" />
+          <Property Name="fecha_op" Type="DateTime" Precision="0" />
+          <Property Name="turno_id" Type="Int32" />
+          <Property Name="viajes_ob" Type="Int32" />
+          <Property Name="ton_ob_cam" Type="Double" />
+          <Property Name="ton_ob_ox" Type="Double" />
+          <Property Name="ton_bal_faja" Type="Double" />
+          <Property Name="tm_acum_ini_ob" Type="Double" />
+          <Property Name="tm_acum_fin_ob" Type="Double" />
+          <Property Name="tmh_ob_bal" Type="Double" />
+          <Property Name="h_op_ob" Type="Double" />
+          <Property Name="horas" Type="Double" />
+          <Property Name="minutos" Type="Double" />
+          <Property Name="h_mantto_ob" Type="Double" />
+          <Property Name="horas_mantto" Type="Double" />
+          <Property Name="minutos_mantto" Type="Double" />
+          <Property Name="h_operacion" Type="Double" />
+          <Property Name="horas_operacion" Type="Double" />
+          <Property Name="minutos_operacion" Type="Double" />
+          <Property Name="h_calendario" Type="Double" />
+          <Property Name="porc_d_ob" Type="Double" />
+          <Property Name="porc_ud_ob" Type="Double" />
+          <Property Name="porc_u_ob" Type="Double" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MS_PRODUCCION">
+          <Key>
+            <PropertyRef Name="produccion_id" />
+          </Key>
+          <Property Name="produccion_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha_op" Type="DateTime" Precision="0" />
+          <Property Name="turno_id" Type="Int32" />
+          <Property Name="tm_acum_faja1" Type="Double" />
+          <Property Name="tm_acum_ob" Type="Double" />
+          <Property Name="mps_porc" Type="Double" />
+          <Property Name="presion_ntg" Type="Double" />
+          <Property Name="rpm_main_shaft" Type="Double" />
+          <Property Name="amp_chancadora" Type="Double" />
+          <Property Name="f_aceite_sup" Type="Double" />
+          <Property Name="f_aceite_inf" Type="Double" />
+          <Property Name="rpm_apron_feeder" Type="Double" />
+          <Property Name="a_apron_feeder" Type="Double" />
+          <Property Name="a_faja_uno" Type="Double" />
+          <Property Name="a_faja_dos" Type="Double" />
+          <Property Name="a_faja_tres" Type="Double" />
+          <Property Name="tpm" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="poligonos" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="celda" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="frec_av_a" Type="Double" />
+          <Property Name="frec_av_b" Type="Double" />
+          <Property Name="frec_av_c" Type="Double" />
+          <Property Name="pr_hidra_uno" Type="Double" />
+          <Property Name="pr_hidra_dos" Type="Double" />
+          <Property Name="tk_verde" Type="Double" />
+          <Property Name="tk_rojo" Type="Double" />
+          <Property Name="stock_pile" Type="Double" />
+          <Property Name="ratio_cal" Type="Double" />
+          <Property Name="silo_a" Type="Double" />
+          <Property Name="silo_b" Type="Double" />
+          <Property Name="observacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="activo" Type="Boolean" />
+          <Property Name="usuario_crea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_crea" Type="DateTime" Precision="3" />
+          <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MinsurRepoModelStoreContainer" CdmEntityContainer="MinsurRepoEntities">
+          <EntitySetMapping Name="MS_ADSORCION">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_ADSORCION">
+              <MappingFragment StoreEntitySet="MS_ADSORCION">
+                <ScalarProperty Name="adsorcion_id" ColumnName="adsorcion_id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="horas" ColumnName="horas" />
+                <ScalarProperty Name="au_ing_n1" ColumnName="au_ing_n1" />
+                <ScalarProperty Name="au_ing_n2" ColumnName="au_ing_n2" />
+                <ScalarProperty Name="au_sal_n1" ColumnName="au_sal_n1" />
+                <ScalarProperty Name="au_sal_n2" ColumnName="au_sal_n2" />
+                <ScalarProperty Name="ag_ing_n1" ColumnName="ag_ing_n1" />
+                <ScalarProperty Name="ag_ing_n2" ColumnName="ag_ing_n2" />
+                <ScalarProperty Name="ag_sal_n1" ColumnName="ag_sal_n1" />
+                <ScalarProperty Name="ag_sal_n2" ColumnName="ag_sal_n2" />
+                <ScalarProperty Name="flujo_ini_1" ColumnName="flujo_ini_1" />
+                <ScalarProperty Name="flujo_ini_2" ColumnName="flujo_ini_2" />
+                <ScalarProperty Name="flujo_fin_1" ColumnName="flujo_fin_1" />
+                <ScalarProperty Name="flujo_fin_2" ColumnName="flujo_fin_2" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_CHANCADORA">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_CHANCADORA">
+              <MappingFragment StoreEntitySet="MS_CHANCADORA">
+                <ScalarProperty Name="chancadora_id" ColumnName="chancadora_id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="guardia_id" ColumnName="guardia_id" />
+                <ScalarProperty Name="turno_id" ColumnName="turno_id" />
+                <ScalarProperty Name="ch_ore_bin_id" ColumnName="ch_ore_bin_id" />
+                <ScalarProperty Name="tipo_actividad_id" ColumnName="tipo_actividad_id" />
+                <ScalarProperty Name="hora_inicio" ColumnName="hora_inicio" />
+                <ScalarProperty Name="hora_fin" ColumnName="hora_fin" />
+                <ScalarProperty Name="comentarios" ColumnName="comentarios" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_CONSUMO_COMBUSTIBLE">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_CONSUMO_COMBUSTIBLE">
+              <MappingFragment StoreEntitySet="MS_CONSUMO_COMBUSTIBLE">
+                <ScalarProperty Name="consumo_combustible_id" ColumnName="consumo_combustible_id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="guardia_id" ColumnName="guardia_id" />
+                <ScalarProperty Name="turno_id" ColumnName="turno_id" />
+                <ScalarProperty Name="equipo_id" ColumnName="equipo_id" />
+                <ScalarProperty Name="galones" ColumnName="galones" />
+                <ScalarProperty Name="operador_id" ColumnName="operador_id" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_DESORCION">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_DESORCION">
+              <MappingFragment StoreEntitySet="MS_DESORCION">
+                <ScalarProperty Name="desorcion_id" ColumnName="desorcion_id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="num_fundicion" ColumnName="num_fundicion" />
+                <ScalarProperty Name="mes" ColumnName="mes" />
+                <ScalarProperty Name="num_desorcion" ColumnName="num_desorcion" />
+                <ScalarProperty Name="num_desorcion_mes" ColumnName="num_desorcion_mes" />
+                <ScalarProperty Name="num_col_desc" ColumnName="num_col_desc" />
+                <ScalarProperty Name="peso_col_desc" ColumnName="peso_col_desc" />
+                <ScalarProperty Name="hora_inicio" ColumnName="hora_inicio" />
+                <ScalarProperty Name="hora_fin" ColumnName="hora_fin" />
+                <ScalarProperty Name="au_rico" ColumnName="au_rico" />
+                <ScalarProperty Name="au_pobre" ColumnName="au_pobre" />
+                <ScalarProperty Name="ag_rico" ColumnName="ag_rico" />
+                <ScalarProperty Name="ag_pobre" ColumnName="ag_pobre" />
+                <ScalarProperty Name="hg_rico" ColumnName="hg_rico" />
+                <ScalarProperty Name="hg_pobre" ColumnName="hg_pobre" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_ESTADO">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_ESTADO">
+              <MappingFragment StoreEntitySet="MS_ESTADO">
+                <ScalarProperty Name="estado_id" ColumnName="estado_id" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="tipo_mantenimiento" ColumnName="tipo_mantenimiento" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_GUARDIA">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_GUARDIA">
+              <MappingFragment StoreEntitySet="MS_GUARDIA">
+                <ScalarProperty Name="guardia_id" ColumnName="guardia_id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="turno_id" ColumnName="turno_id" />
+                <ScalarProperty Name="grupo" ColumnName="grupo" />
+                <ScalarProperty Name="jefe_guardia_id" ColumnName="jefe_guardia_id" />
+                <ScalarProperty Name="operador_planta_id" ColumnName="operador_planta_id" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_LISTA">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_LISTA">
+              <MappingFragment StoreEntitySet="MS_LISTA">
+                <ScalarProperty Name="lista_id" ColumnName="lista_id" />
+                <ScalarProperty Name="lista" ColumnName="lista" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_LISTA_VALOR">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_LISTA_VALOR">
+              <MappingFragment StoreEntitySet="MS_LISTA_VALOR">
+                <ScalarProperty Name="lista_valor_id" ColumnName="lista_valor_id" />
+                <ScalarProperty Name="lista_id" ColumnName="lista_id" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_MANT_EQUIPOS">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_MANT_EQUIPOS">
+              <MappingFragment StoreEntitySet="MS_MANT_EQUIPOS">
+                <ScalarProperty Name="equipo_id" ColumnName="equipo_id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="guardia_id" ColumnName="guardia_id" />
+                <ScalarProperty Name="turno_id" ColumnName="turno_id" />
+                <ScalarProperty Name="camiom_cargador" ColumnName="camiom_cargador" />
+                <ScalarProperty Name="tipo_actividad_id" ColumnName="tipo_actividad_id" />
+                <ScalarProperty Name="operador_id" ColumnName="operador_id" />
+                <ScalarProperty Name="hora_inicial" ColumnName="hora_inicial" />
+                <ScalarProperty Name="hora_fin" ColumnName="hora_fin" />
+                <ScalarProperty Name="tancada" ColumnName="tancada" />
+                <ScalarProperty Name="hora_ini_mant" ColumnName="hora_ini_mant" />
+                <ScalarProperty Name="hora_fin_mant" ColumnName="hora_fin_mant" />
+                <ScalarProperty Name="comentarios" ColumnName="comentarios" />
+                <ScalarProperty Name="equipo_cargio_id" ColumnName="equipo_cargio_id" />
+                <ScalarProperty Name="material_id" ColumnName="material_id" />
+                <ScalarProperty Name="zona_carguio" ColumnName="zona_carguio" />
+                <ScalarProperty Name="punto_descarga" ColumnName="punto_descarga" />
+                <ScalarProperty Name="numero_viajes" ColumnName="numero_viajes" />
+                <ScalarProperty Name="produccion_total" ColumnName="produccion_total" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_MANT_PRODUCCION_X_HORA">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_MANT_PRODUCCION_X_HORA">
+              <MappingFragment StoreEntitySet="MS_MANT_PRODUCCION_X_HORA">
+                <ScalarProperty Name="produccion_hora_id" ColumnName="produccion_hora_id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="guardia_id" ColumnName="guardia_id" />
+                <ScalarProperty Name="turno_id" ColumnName="turno_id" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="camion" ColumnName="camion" />
+                <ScalarProperty Name="toneladas" ColumnName="toneladas" />
+                <ScalarProperty Name="viajes" ColumnName="viajes" />
+                <ScalarProperty Name="material_id" ColumnName="material_id" />
+                <ScalarProperty Name="ruta_id" ColumnName="ruta_id" />
+                <ScalarProperty Name="tancada" ColumnName="tancada" />
+                <ScalarProperty Name="zona_cargio_id" ColumnName="zona_cargio_id" />
+                <ScalarProperty Name="equipo_cargio_id" ColumnName="equipo_cargio_id" />
+                <ScalarProperty Name="ton1" ColumnName="ton1" />
+                <ScalarProperty Name="ton2" ColumnName="ton2" />
+                <ScalarProperty Name="ton3" ColumnName="ton3" />
+                <ScalarProperty Name="ton4" ColumnName="ton4" />
+                <ScalarProperty Name="ton5" ColumnName="ton5" />
+                <ScalarProperty Name="ton6" ColumnName="ton6" />
+                <ScalarProperty Name="ton7" ColumnName="ton7" />
+                <ScalarProperty Name="ton8" ColumnName="ton8" />
+                <ScalarProperty Name="ton9" ColumnName="ton9" />
+                <ScalarProperty Name="ton10" ColumnName="ton10" />
+                <ScalarProperty Name="ton11" ColumnName="ton11" />
+                <ScalarProperty Name="ton12" ColumnName="ton12" />
+                <ScalarProperty Name="ton13" ColumnName="ton13" />
+                <ScalarProperty Name="ton14" ColumnName="ton14" />
+                <ScalarProperty Name="ton15" ColumnName="ton15" />
+                <ScalarProperty Name="ton16" ColumnName="ton16" />
+                <ScalarProperty Name="ton17" ColumnName="ton17" />
+                <ScalarProperty Name="ton18" ColumnName="ton18" />
+                <ScalarProperty Name="ton19" ColumnName="ton19" />
+                <ScalarProperty Name="ton20" ColumnName="ton20" />
+                <ScalarProperty Name="ton21" ColumnName="ton21" />
+                <ScalarProperty Name="ton22" ColumnName="ton22" />
+                <ScalarProperty Name="ton23" ColumnName="ton23" />
+                <ScalarProperty Name="ton24" ColumnName="ton24" />
+                <ScalarProperty Name="ton25" ColumnName="ton25" />
+                <ScalarProperty Name="ton26" ColumnName="ton26" />
+                <ScalarProperty Name="ton27" ColumnName="ton27" />
+                <ScalarProperty Name="ton28" ColumnName="ton28" />
+                <ScalarProperty Name="ton29" ColumnName="ton29" />
+                <ScalarProperty Name="ton30" ColumnName="ton30" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_PARADA">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_PARADA">
+              <MappingFragment StoreEntitySet="MS_PARADA">
+                <ScalarProperty Name="parada_id" ColumnName="parada_id" />
+                <ScalarProperty Name="area_id" ColumnName="area_id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="turno_id" ColumnName="turno_id" />
+                <ScalarProperty Name="hora_inicio" ColumnName="hora_inicio" />
+                <ScalarProperty Name="hora_fin" ColumnName="hora_fin" />
+                <ScalarProperty Name="duracion" ColumnName="duracion" />
+                <ScalarProperty Name="tipo_parada_id" ColumnName="tipo_parada_id" />
+                <ScalarProperty Name="sub_tipo_parada_id" ColumnName="sub_tipo_parada_id" />
+                <ScalarProperty Name="estado_id" ColumnName="estado_id" />
+                <ScalarProperty Name="serie_id" ColumnName="serie_id" />
+                <ScalarProperty Name="comentario" ColumnName="comentario" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_PARAMETRO">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_PARAMETRO">
+              <MappingFragment StoreEntitySet="MS_PARAMETRO">
+                <ScalarProperty Name="parametro_id" ColumnName="parametro_id" />
+                <ScalarProperty Name="horas" ColumnName="horas" />
+                <ScalarProperty Name="total_ini" ColumnName="total_ini" />
+                <ScalarProperty Name="total_fin" ColumnName="total_fin" />
+                <ScalarProperty Name="flujo_dia" ColumnName="flujo_dia" />
+                <ScalarProperty Name="nivel_poza_pls" ColumnName="nivel_poza_pls" />
+                <ScalarProperty Name="nivel_poza_may" ColumnName="nivel_poza_may" />
+                <ScalarProperty Name="vol_poza_pls" ColumnName="vol_poza_pls" />
+                <ScalarProperty Name="vol_poza_may" ColumnName="vol_poza_may" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_PROCESO">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_PROCESO">
+              <MappingFragment StoreEntitySet="MS_PROCESO">
+                <ScalarProperty Name="proceso_id" ColumnName="proceso_id" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="anho" ColumnName="anho" />
+                <ScalarProperty Name="mes" ColumnName="mes" />
+                <ScalarProperty Name="mcl_fecha_inicio" ColumnName="mcl_fecha_inicio" />
+                <ScalarProperty Name="mcl_fecha_fin" ColumnName="mcl_fecha_fin" />
+                <ScalarProperty Name="adr_fecha_inicio" ColumnName="adr_fecha_inicio" />
+                <ScalarProperty Name="adr_fecha_fin" ColumnName="adr_fecha_fin" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_TIPO_PARADA">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_TIPO_PARADA">
+              <MappingFragment StoreEntitySet="MS_TIPO_PARADA">
+                <ScalarProperty Name="tipo_parada_id" ColumnName="tipo_parada_id" />
+                <ScalarProperty Name="tipo_parada" ColumnName="tipo_parada" />
+                <ScalarProperty Name="sub_tipo_parada" ColumnName="sub_tipo_parada" />
+                <ScalarProperty Name="codigo_serie" ColumnName="codigo_serie" />
+                <ScalarProperty Name="descripcion_serie" ColumnName="descripcion_serie" />
+                <ScalarProperty Name="estado_serie" ColumnName="estado_serie" />
+                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_INGRESONIVELESPOZA">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_INGRESONIVELESPOZA">
+              <MappingFragment StoreEntitySet="MS_INGRESONIVELESPOZA">
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="volumePGE" ColumnName="volumePGE" />
+                <ScalarProperty Name="cotaPGE" ColumnName="cotaPGE" />
+                <ScalarProperty Name="volumePLS" ColumnName="volumePLS" />
+                <ScalarProperty Name="cotaPLS" ColumnName="cotaPLS" />
+                <ScalarProperty Name="turno" ColumnName="turno" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="ingresoNivelesPoza_id" ColumnName="ingresoNivelesPoza_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_INGRESOPORGOTEO">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_INGRESOPORGOTEO">
+              <MappingFragment StoreEntitySet="MS_INGRESOPORGOTEO">
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="celdaId" ColumnName="celdaId" />
+                <ScalarProperty Name="TMS" ColumnName="TMS" />
+                <ScalarProperty Name="onzasAg" ColumnName="onzasAg" />
+                <ScalarProperty Name="onzasAu" ColumnName="onzasAu" />
+                <ScalarProperty Name="diaPrograRiego" ColumnName="diaPrograRiego" />
+                <ScalarProperty Name="diaRiegoAlaFecha" ColumnName="diaRiegoAlaFecha" />
+                <ScalarProperty Name="fechaFinRealRiego" ColumnName="fechaFinRealRiego" />
+                <ScalarProperty Name="fechaFinRiego" ColumnName="fechaFinRiego" />
+                <ScalarProperty Name="fechaInicioRiego" ColumnName="fechaInicioRiego" />
+                <ScalarProperty Name="fechaFinApilamiento" ColumnName="fechaFinApilamiento" />
+                <ScalarProperty Name="fechaInicioApilamiento" ColumnName="fechaInicioApilamiento" />
+                <ScalarProperty Name="leyAgOverliner" ColumnName="leyAgOverliner" />
+                <ScalarProperty Name="leyAuOverliner" ColumnName="leyAuOverliner" />
+                <ScalarProperty Name="Tonelaje_Overliner_" ColumnName="Tonelaje_Overliner_" />
+                <ScalarProperty Name="leyAgChancado" ColumnName="leyAgChancado" />
+                <ScalarProperty Name="leyAuChancado" ColumnName="leyAuChancado" />
+                <ScalarProperty Name="tonelajeChancado" ColumnName="tonelajeChancado" />
+                <ScalarProperty Name="flujo" ColumnName="flujo" />
+                <ScalarProperty Name="codArea" ColumnName="codArea" />
+                <ScalarProperty Name="ingresoporgoteo_id" ColumnName="ingresoporgoteo_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_AGUAS_OPERACIONES">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_AGUAS_OPERACIONES">
+              <MappingFragment StoreEntitySet="MS_AGUAS_OPERACIONES">
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="variador_velocidad_pozo_6" ColumnName="variador_velocidad_pozo_6" />
+                <ScalarProperty Name="variador_velocidad_pozo_5" ColumnName="variador_velocidad_pozo_5" />
+                <ScalarProperty Name="variador_velocidad_pozo_4" ColumnName="variador_velocidad_pozo_4" />
+                <ScalarProperty Name="variador_velocidad_pozo_3" ColumnName="variador_velocidad_pozo_3" />
+                <ScalarProperty Name="variador_velocidad_pozo_2" ColumnName="variador_velocidad_pozo_2" />
+                <ScalarProperty Name="variador_velocidad_pozo_1" ColumnName="variador_velocidad_pozo_1" />
+                <ScalarProperty Name="nivel_freatico_pozo_6" ColumnName="nivel_freatico_pozo_6" />
+                <ScalarProperty Name="nivel_freatico_pozo_5" ColumnName="nivel_freatico_pozo_5" />
+                <ScalarProperty Name="nivel_freatico_pozo_4" ColumnName="nivel_freatico_pozo_4" />
+                <ScalarProperty Name="nivel_freatico_pozo_3" ColumnName="nivel_freatico_pozo_3" />
+                <ScalarProperty Name="nivel_freatico_pozo_2" ColumnName="nivel_freatico_pozo_2" />
+                <ScalarProperty Name="nivel_freatico_pozo_1" ColumnName="nivel_freatico_pozo_1" />
+                <ScalarProperty Name="totalizador_make_up_planta" ColumnName="totalizador_make_up_planta" />
+                <ScalarProperty Name="totalizador_ingreso_tk_2" ColumnName="totalizador_ingreso_tk_2" />
+                <ScalarProperty Name="totalizador_pozo_6" ColumnName="totalizador_pozo_6" />
+                <ScalarProperty Name="totalizador_pozo_5" ColumnName="totalizador_pozo_5" />
+                <ScalarProperty Name="totalizador_pozo_4" ColumnName="totalizador_pozo_4" />
+                <ScalarProperty Name="totalizador_pozo_3" ColumnName="totalizador_pozo_3" />
+                <ScalarProperty Name="totalizador_pozo_2" ColumnName="totalizador_pozo_2" />
+                <ScalarProperty Name="totalizador_pozo_1" ColumnName="totalizador_pozo_1" />
+                <ScalarProperty Name="bombeo_chancado_niv_final" ColumnName="bombeo_chancado_niv_final" />
+                <ScalarProperty Name="bombeo_chancado_niv_inicial" ColumnName="bombeo_chancado_niv_inicial" />
+                <ScalarProperty Name="pluviomento_pozos_agua" ColumnName="pluviomento_pozos_agua" />
+                <ScalarProperty Name="pluviometro_planta_adr" ColumnName="pluviometro_planta_adr" />
+                <ScalarProperty Name="pluviometro_lixiviacion" ColumnName="pluviometro_lixiviacion" />
+                <ScalarProperty Name="consumo_rrhh_pucamara" ColumnName="consumo_rrhh_pucamara" />
+                <ScalarProperty Name="consumo_rrhh_timpure" ColumnName="consumo_rrhh_timpure" />
+                <ScalarProperty Name="consumo_proy_obras" ColumnName="consumo_proy_obras" />
+                <ScalarProperty Name="consumo_proy_campamento" ColumnName="consumo_proy_campamento" />
+                <ScalarProperty Name="consumo_exploracion" ColumnName="consumo_exploracion" />
+                <ScalarProperty Name="consumo_geologia" ColumnName="consumo_geologia" />
+                <ScalarProperty Name="consumo_mina_riego_caliza" ColumnName="consumo_mina_riego_caliza" />
+                <ScalarProperty Name="consumo_mina_riego_vias" ColumnName="consumo_mina_riego_vias" />
+                <ScalarProperty Name="consumo_mina_cat_777" ColumnName="consumo_mina_cat_777" />
+                <ScalarProperty Name="nivel_tk_botadero" ColumnName="nivel_tk_botadero" />
+                <ScalarProperty Name="nivel_pm_pls" ColumnName="nivel_pm_pls" />
+                <ScalarProperty Name="nivel_pm_pad" ColumnName="nivel_pm_pad" />
+                <ScalarProperty Name="nivel_tk_chancado" ColumnName="nivel_tk_chancado" />
+                <ScalarProperty Name="nivel_tk_contraincendio" ColumnName="nivel_tk_contraincendio" />
+                <ScalarProperty Name="nivel_tk_2" ColumnName="nivel_tk_2" />
+                <ScalarProperty Name="nivel_tk_1" ColumnName="nivel_tk_1" />
+                <ScalarProperty Name="tecnico_id" ColumnName="tecnico_id" />
+                <ScalarProperty Name="turno_id" ColumnName="turno_id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="agua_op_id" ColumnName="agua_op_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_APILAMIENTO">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_APILAMIENTO">
+              <MappingFragment StoreEntitySet="MS_APILAMIENTO">
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="volumen" ColumnName="volumen" />
+                <ScalarProperty Name="densidad" ColumnName="densidad" />
+                <ScalarProperty Name="onzas_ag" ColumnName="onzas_ag" />
+                <ScalarProperty Name="onzas_au" ColumnName="onzas_au" />
+                <ScalarProperty Name="ley_prom_ag" ColumnName="ley_prom_ag" />
+                <ScalarProperty Name="ley_prom_au" ColumnName="ley_prom_au" />
+                <ScalarProperty Name="humedad" ColumnName="humedad" />
+                <ScalarProperty Name="ph" ColumnName="ph" />
+                <ScalarProperty Name="destino" ColumnName="destino" />
+                <ScalarProperty Name="origen" ColumnName="origen" />
+                <ScalarProperty Name="ley_ag_rom" ColumnName="ley_ag_rom" />
+                <ScalarProperty Name="ley_au_rom" ColumnName="ley_au_rom" />
+                <ScalarProperty Name="tmh_rom" ColumnName="tmh_rom" />
+                <ScalarProperty Name="ley_ag_mineral" ColumnName="ley_ag_mineral" />
+                <ScalarProperty Name="ley_au_mineral" ColumnName="ley_au_mineral" />
+                <ScalarProperty Name="tmh_mineral" ColumnName="tmh_mineral" />
+                <ScalarProperty Name="turno_id" ColumnName="turno_id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="apilamiento_id" ColumnName="apilamiento_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_CAMIONES">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_CAMIONES">
+              <MappingFragment StoreEntitySet="MS_CAMIONES">
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="detalle" ColumnName="detalle" />
+                <ScalarProperty Name="horas_maquina" ColumnName="horas_maquina" />
+                <ScalarProperty Name="tipo_equipo_id" ColumnName="tipo_equipo_id" />
+                <ScalarProperty Name="turno_id" ColumnName="turno_id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="camion_id" ColumnName="camion_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_FLUJOS_PRESIONES">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_FLUJOS_PRESIONES">
+              <MappingFragment StoreEntitySet="MS_FLUJOS_PRESIONES">
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="comentarios" ColumnName="comentarios" />
+                <ScalarProperty Name="totalizador" ColumnName="totalizador" />
+                <ScalarProperty Name="presion_corregida" ColumnName="presion_corregida" />
+                <ScalarProperty Name="flujo_corregido" ColumnName="flujo_corregido" />
+                <ScalarProperty Name="presion_real" ColumnName="presion_real" />
+                <ScalarProperty Name="flujo_real" ColumnName="flujo_real" />
+                <ScalarProperty Name="presion" ColumnName="presion" />
+                <ScalarProperty Name="flujo" ColumnName="flujo" />
+                <ScalarProperty Name="ingeniero_id" ColumnName="ingeniero_id" />
+                <ScalarProperty Name="operador_id" ColumnName="operador_id" />
+                <ScalarProperty Name="celda_id" ColumnName="celda_id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="flujo_presion_id" ColumnName="flujo_presion_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_OPCION">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_OPCION">
+              <MappingFragment StoreEntitySet="MS_OPCION">
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="opcion_cod" ColumnName="opcion_cod" />
+                <ScalarProperty Name="opcion_id" ColumnName="opcion_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_ROL">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_ROL">
+              <MappingFragment StoreEntitySet="MS_ROL">
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_ROL_OPCION">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_ROL_OPCION">
+              <MappingFragment StoreEntitySet="MS_ROL_OPCION">
+                <ScalarProperty Name="opcion_id" ColumnName="opcion_id" />
+                <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_USUARIO">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_USUARIO">
+              <MappingFragment StoreEntitySet="MS_USUARIO">
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_USUARIO_ROL">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_USUARIO_ROL">
+              <MappingFragment StoreEntitySet="MS_USUARIO_ROL">
+                <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+                <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_TURNO_LIX">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_TURNO_LIX">
+              <MappingFragment StoreEntitySet="MS_TURNO_LIX">
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="flujo_lixiviacion_calc" ColumnName="flujo_lixiviacion_calc" />
+                <ScalarProperty Name="flujo_adr_tren_2_calc" ColumnName="flujo_adr_tren_2_calc" />
+                <ScalarProperty Name="flujo_adr_tren_1_calc" ColumnName="flujo_adr_tren_1_calc" />
+                <ScalarProperty Name="factor" ColumnName="factor" />
+                <ScalarProperty Name="flujo_lixiviacion" ColumnName="flujo_lixiviacion" />
+                <ScalarProperty Name="flujo_adr_tren_2" ColumnName="flujo_adr_tren_2" />
+                <ScalarProperty Name="flujo_adr_tren_1" ColumnName="flujo_adr_tren_1" />
+                <ScalarProperty Name="ley_plata_m2_tren_2" ColumnName="ley_plata_m2_tren_2" />
+                <ScalarProperty Name="ley_plata_m2_tren_1" ColumnName="ley_plata_m2_tren_1" />
+                <ScalarProperty Name="ley_plata_m1_tren_2" ColumnName="ley_plata_m1_tren_2" />
+                <ScalarProperty Name="ley_plata_m1_tren_1" ColumnName="ley_plata_m1_tren_1" />
+                <ScalarProperty Name="ley_oro_m3" ColumnName="ley_oro_m3" />
+                <ScalarProperty Name="ley_oro_m2_tren_2" ColumnName="ley_oro_m2_tren_2" />
+                <ScalarProperty Name="ley_oro_m2_tren_1" ColumnName="ley_oro_m2_tren_1" />
+                <ScalarProperty Name="ley_oro_m1_tren_2" ColumnName="ley_oro_m1_tren_2" />
+                <ScalarProperty Name="ley_oro_m1_tren_1" ColumnName="ley_oro_m1_tren_1" />
+                <ScalarProperty Name="lluvia" ColumnName="lluvia" />
+                <ScalarProperty Name="poza_pls" ColumnName="poza_pls" />
+                <ScalarProperty Name="turno_id" ColumnName="turno_id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="turno_lix_id" ColumnName="turno_lix_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_CONTROL_DIG_LIXIVIACION">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_CONTROL_DIG_LIXIVIACION">
+              <MappingFragment StoreEntitySet="MS_CONTROL_DIG_LIXIVIACION">
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="presion_925" ColumnName="presion_925" />
+                <ScalarProperty Name="presion_sump" ColumnName="presion_sump" />
+                <ScalarProperty Name="presion_adr" ColumnName="presion_adr" />
+                <ScalarProperty Name="flujo" ColumnName="flujo" />
+                <ScalarProperty Name="comentarios" ColumnName="comentarios" />
+                <ScalarProperty Name="presion_flujo" ColumnName="presion_flujo" />
+                <ScalarProperty Name="nivel_tk_2" ColumnName="nivel_tk_2" />
+                <ScalarProperty Name="totalizador_tk_2" ColumnName="totalizador_tk_2" />
+                <ScalarProperty Name="ripeo" ColumnName="ripeo" />
+                <ScalarProperty Name="corte" ColumnName="corte" />
+                <ScalarProperty Name="cal_hidratada" ColumnName="cal_hidratada" />
+                <ScalarProperty Name="cal_viva" ColumnName="cal_viva" />
+                <ScalarProperty Name="pluviometro" ColumnName="pluviometro" />
+                <ScalarProperty Name="poligono" ColumnName="poligono" />
+                <ScalarProperty Name="ley_mineral" ColumnName="ley_mineral" />
+                <ScalarProperty Name="nro_camiones" ColumnName="nro_camiones" />
+                <ScalarProperty Name="celda_opc" ColumnName="celda_opc" />
+                <ScalarProperty Name="nro_viajes" ColumnName="nro_viajes" />
+                <ScalarProperty Name="tecnico_apilamiento_id" ColumnName="tecnico_apilamiento_id" />
+                <ScalarProperty Name="tecnico_lixiviacion_id" ColumnName="tecnico_lixiviacion_id" />
+                <ScalarProperty Name="celda_id" ColumnName="celda_id" />
+                <ScalarProperty Name="turno_id" ColumnName="turno_id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="control_dig_lix_id" ColumnName="control_dig_lix_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_PROD_CHANCADORA">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_PROD_CHANCADORA">
+              <MappingFragment StoreEntitySet="MS_PROD_CHANCADORA">
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="porc_u_ch" ColumnName="porc_u_ch" />
+                <ScalarProperty Name="porc_ud_ch" ColumnName="porc_ud_ch" />
+                <ScalarProperty Name="porc_d_ch" ColumnName="porc_d_ch" />
+                <ScalarProperty Name="h_calendario" ColumnName="h_calendario" />
+                <ScalarProperty Name="minutos_operacion" ColumnName="minutos_operacion" />
+                <ScalarProperty Name="horas_operacion" ColumnName="horas_operacion" />
+                <ScalarProperty Name="h_operacion" ColumnName="h_operacion" />
+                <ScalarProperty Name="minutos_mantto" ColumnName="minutos_mantto" />
+                <ScalarProperty Name="horas_mantto" ColumnName="horas_mantto" />
+                <ScalarProperty Name="h_mantto_ch" ColumnName="h_mantto_ch" />
+                <ScalarProperty Name="minutos" ColumnName="minutos" />
+                <ScalarProperty Name="horas" ColumnName="horas" />
+                <ScalarProperty Name="h_op_ch" ColumnName="h_op_ch" />
+                <ScalarProperty Name="tmh_ch_bal" ColumnName="tmh_ch_bal" />
+                <ScalarProperty Name="tm_acum_fin_ch" ColumnName="tm_acum_fin_ch" />
+                <ScalarProperty Name="tm_acum_ini_ch" ColumnName="tm_acum_ini_ch" />
+                <ScalarProperty Name="ton_bal_faja" ColumnName="ton_bal_faja" />
+                <ScalarProperty Name="tmh_ch_ox" ColumnName="tmh_ch_ox" />
+                <ScalarProperty Name="ton_ch_ox" ColumnName="ton_ch_ox" />
+                <ScalarProperty Name="ton_ch_cam" ColumnName="ton_ch_cam" />
+                <ScalarProperty Name="viajes_ch" ColumnName="viajes_ch" />
+                <ScalarProperty Name="turno_id" ColumnName="turno_id" />
+                <ScalarProperty Name="fecha_op" ColumnName="fecha_op" />
+                <ScalarProperty Name="produccion_id" ColumnName="produccion_id" />
+                <ScalarProperty Name="prod_chancadora_id" ColumnName="prod_chancadora_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_PROD_ORE_BIN">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_PROD_ORE_BIN">
+              <MappingFragment StoreEntitySet="MS_PROD_ORE_BIN">
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="porc_u_ob" ColumnName="porc_u_ob" />
+                <ScalarProperty Name="porc_ud_ob" ColumnName="porc_ud_ob" />
+                <ScalarProperty Name="porc_d_ob" ColumnName="porc_d_ob" />
+                <ScalarProperty Name="h_calendario" ColumnName="h_calendario" />
+                <ScalarProperty Name="minutos_operacion" ColumnName="minutos_operacion" />
+                <ScalarProperty Name="horas_operacion" ColumnName="horas_operacion" />
+                <ScalarProperty Name="h_operacion" ColumnName="h_operacion" />
+                <ScalarProperty Name="minutos_mantto" ColumnName="minutos_mantto" />
+                <ScalarProperty Name="horas_mantto" ColumnName="horas_mantto" />
+                <ScalarProperty Name="h_mantto_ob" ColumnName="h_mantto_ob" />
+                <ScalarProperty Name="minutos" ColumnName="minutos" />
+                <ScalarProperty Name="horas" ColumnName="horas" />
+                <ScalarProperty Name="h_op_ob" ColumnName="h_op_ob" />
+                <ScalarProperty Name="tmh_ob_bal" ColumnName="tmh_ob_bal" />
+                <ScalarProperty Name="tm_acum_fin_ob" ColumnName="tm_acum_fin_ob" />
+                <ScalarProperty Name="tm_acum_ini_ob" ColumnName="tm_acum_ini_ob" />
+                <ScalarProperty Name="ton_bal_faja" ColumnName="ton_bal_faja" />
+                <ScalarProperty Name="ton_ob_ox" ColumnName="ton_ob_ox" />
+                <ScalarProperty Name="ton_ob_cam" ColumnName="ton_ob_cam" />
+                <ScalarProperty Name="viajes_ob" ColumnName="viajes_ob" />
+                <ScalarProperty Name="turno_id" ColumnName="turno_id" />
+                <ScalarProperty Name="fecha_op" ColumnName="fecha_op" />
+                <ScalarProperty Name="produccion_id" ColumnName="produccion_id" />
+                <ScalarProperty Name="prod_ore_bin_id" ColumnName="prod_ore_bin_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_PRODUCCION">
+            <EntityTypeMapping TypeName="MinsurRepoModel.MS_PRODUCCION">
+              <MappingFragment StoreEntitySet="MS_PRODUCCION">
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="fecha_crea" ColumnName="fecha_crea" />
+                <ScalarProperty Name="usuario_crea" ColumnName="usuario_crea" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="silo_b" ColumnName="silo_b" />
+                <ScalarProperty Name="silo_a" ColumnName="silo_a" />
+                <ScalarProperty Name="ratio_cal" ColumnName="ratio_cal" />
+                <ScalarProperty Name="stock_pile" ColumnName="stock_pile" />
+                <ScalarProperty Name="tk_rojo" ColumnName="tk_rojo" />
+                <ScalarProperty Name="tk_verde" ColumnName="tk_verde" />
+                <ScalarProperty Name="pr_hidra_dos" ColumnName="pr_hidra_dos" />
+                <ScalarProperty Name="pr_hidra_uno" ColumnName="pr_hidra_uno" />
+                <ScalarProperty Name="frec_av_c" ColumnName="frec_av_c" />
+                <ScalarProperty Name="frec_av_b" ColumnName="frec_av_b" />
+                <ScalarProperty Name="frec_av_a" ColumnName="frec_av_a" />
+                <ScalarProperty Name="celda" ColumnName="celda" />
+                <ScalarProperty Name="poligonos" ColumnName="poligonos" />
+                <ScalarProperty Name="tpm" ColumnName="tpm" />
+                <ScalarProperty Name="a_faja_tres" ColumnName="a_faja_tres" />
+                <ScalarProperty Name="a_faja_dos" ColumnName="a_faja_dos" />
+                <ScalarProperty Name="a_faja_uno" ColumnName="a_faja_uno" />
+                <ScalarProperty Name="a_apron_feeder" ColumnName="a_apron_feeder" />
+                <ScalarProperty Name="rpm_apron_feeder" ColumnName="rpm_apron_feeder" />
+                <ScalarProperty Name="f_aceite_inf" ColumnName="f_aceite_inf" />
+                <ScalarProperty Name="f_aceite_sup" ColumnName="f_aceite_sup" />
+                <ScalarProperty Name="amp_chancadora" ColumnName="amp_chancadora" />
+                <ScalarProperty Name="rpm_main_shaft" ColumnName="rpm_main_shaft" />
+                <ScalarProperty Name="presion_ntg" ColumnName="presion_ntg" />
+                <ScalarProperty Name="mps_porc" ColumnName="mps_porc" />
+                <ScalarProperty Name="tm_acum_ob" ColumnName="tm_acum_ob" />
+                <ScalarProperty Name="tm_acum_faja1" ColumnName="tm_acum_faja1" />
+                <ScalarProperty Name="turno_id" ColumnName="turno_id" />
+                <ScalarProperty Name="fecha_op" ColumnName="fecha_op" />
+                <ScalarProperty Name="produccion_id" ColumnName="produccion_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

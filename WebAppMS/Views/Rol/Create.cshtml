@@ -1,0 +1,86 @@
+﻿@model WebAppMS.Models.DTORolM
+
+@{
+    ViewBag.Title = "Rol";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>Registro Rol</h2>
+
+</header>
+
+<!-- widget div-->
+<div>
+    @if (Model.resultado == 1)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Información</h4>
+            <p>
+                Se registró correctamente la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    @if (Model.resultado == 2)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Error</h4>
+            <p>
+                No se pudo registrar la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+        <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+        <form id="order-form" class="smart-form" novalidate="novalidate" method="post">
+            @Html.HiddenFor(model => model.rol_id)      
+            <fieldset>
+                <div class="row">
+                    <section class="col col-6">
+                        
+                        <label class="label">Nombre</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.nombre)
+                        </label>
+                        <br />
+                        <label>
+                            <i></i>Activo @Html.CheckBoxFor(model => model.activo)
+                        </label>
+                    </section>
+                </div>
+            </fieldset>
+
+            <footer>
+                <a href="@Url.Action("Index", "Rol")" class="btn btn-primary">Volver</a>
+                <input type="submit" class="btn btn-primary" name="submit" value="Grabar">
+            </footer>
+        </form>
+
+    </div>
+    <!-- end widget content -->
+
+</div>
+@section pagespecific {
+    <script type="text/javascript">
+
+            // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+            $(document).ready(function () {
+                $('body').css('zoom', '80%');
+            });
+    </script>
+}

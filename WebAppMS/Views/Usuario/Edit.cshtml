@@ -1,0 +1,112 @@
+﻿@model WebAppMS.Models.DTOUsuarioM
+
+@{
+    ViewBag.Title = "Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>Modificar Usuario </h2>
+
+</header>
+
+<!-- widget div-->
+<div>
+
+    @if (Model.resultado == 1)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Información</h4>
+            <p>
+                Se modificó correctamente la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    @if (Model.resultado == 2)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Error</h4>
+            <p>
+                No se pudo modificar la información.
+            </p>
+            <br>
+        </div>
+    }
+    @if (Model.resultado == 3)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Error</h4>
+            <p>
+                El usuario ya existe!!!!.
+            </p>
+            <br>
+        </div>
+    }
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+        <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+        <form id="order-form" class="smart-form" novalidate="novalidate" method="post">
+            @Html.HiddenFor(model => model.usuario_id)
+            @Html.HiddenFor(model => model.usuario_crea)
+            @Html.HiddenFor(model => model.fecha_crea)    
+            <fieldset>
+                <div class="row">
+                    <section class="col col-6">
+                        <label class="label">Usuario</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.usuario)
+                        </label>
+                        <br />
+                        <label class="label">Password</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.password)
+                        </label>
+                        <br />
+                        <label class="label">Nombres</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.nombres)
+                        </label>
+                        <br />
+                        <label class="label">Correo</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.correo)
+                        </label>
+                        <br />
+                        <label>
+                            <i></i>Activo @Html.CheckBoxFor(model => model.activo)
+                        </label>
+                    </section>
+                </div>
+            </fieldset>
+
+            <footer>
+                <a href="@Url.Action("Index", "Usuario")">Volver</a>
+                <input type="submit" class="btn btn-primary" name="submit" value="Modificar">
+            </footer>
+        </form>
+
+    </div>
+    <!-- end widget content -->
+</div>
+@section pagespecific {
+    <script type="text/javascript">
+
+            // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+            $(document).ready(function () {
+                $('body').css('zoom', '80%');
+            });
+    </script>
+}

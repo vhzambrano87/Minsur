@@ -1,0 +1,229 @@
+﻿@model WebAppMS.Models.DTOProcesoM
+
+@{
+    ViewBag.Title = "Proceso";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>Modificar Proceso </h2>
+
+</header>
+
+<!-- widget div-->
+<div>
+
+    @if (Model.resultado == 1)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Información</h4>
+            <p>
+                Se modificó correctamente la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    @if (Model.resultado == 2)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Error</h4>
+            <p>
+                No se pudo modificar la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+        <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+        <form id="order-form" class="smart-form" novalidate="novalidate" method="post">
+            @Html.HiddenFor(model => model.proceso_id)
+
+            @Html.HiddenFor(model => model.anho)
+            @Html.HiddenFor(model => model.mes)
+            @Html.HiddenFor(model => model.mcl_fecha_inicio)
+            @Html.HiddenFor(model => model.mcl_fecha_fin)
+            @Html.HiddenFor(model => model.adr_fecha_inicio)
+            @Html.HiddenFor(model => model.adr_fecha_fin)
+
+            @Html.HiddenFor(model => model.usuario_crea)
+            @Html.HiddenFor(model => model.fecha_crea)
+            @Html.HiddenFor(model => model.usuario_mod)
+            @Html.HiddenFor(model => model.fecha_mod)
+                        
+            <fieldset>
+                <div class="row">
+                    <section class="col col-6">
+                        <label class="label">Codigo</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.codigo, new { htmlAttributes = new { @readonly = "readonly" } })
+                        </label>
+                        <br />
+                        <label class="label">Fecha</label>
+
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <select id="anhoH" name="anhoH" class="form-control input-sm" onchange="CalcularCodigo()">
+                                            <option value="2000">2000</option>
+                                            <option value="2001">2001</option>
+                                            <option value="2002">2002</option>
+                                            <option value="2003">2003</option>
+                                            <option value="2004">2004</option>
+                                            <option value="2005">2005</option>
+                                            <option value="2006">2006</option>
+                                            <option value="2007">2007</option>
+                                            <option value="2008">2008</option>
+                                            <option value="2009">2009</option>
+                                            <option value="2010">2010</option>
+                                            <option value="2011">2011</option>
+                                            <option value="2012">2012</option>
+                                            <option value="2013">2013</option>
+                                            <option value="2014">2014</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2026">2026</option>
+                                            <option value="2027">2027</option>
+                                            <option value="2028">2028</option>
+                                            <option value="2029">2029</option>
+                                            <option value="2030">2030</option>
+                                            <option value="2031">2031</option>
+                                            <option value="2032">2032</option>
+                                            <option value="2033">2033</option>
+                                            <option value="2034">2034</option>
+                                            <option value="2035">2035</option>
+                                            <option value="2036">2036</option>
+                                            <option value="2037">2037</option>
+                                            <option value="2038">2038</option>
+                                            <option value="2039">2039</option>
+                                            <option value="2040">2040</option>
+                                            <option value="2041">2041</option>
+                                            <option value="2042">2042</option>
+                                            <option value="2043">2043</option>
+                                            <option value="2044">2044</option>
+                                            <option value="2045">2045</option>
+                                            <option value="2046">2046</option>
+                                            <option value="2047">2047</option>
+                                            <option value="2048">2048</option>
+                                            <option value="2049">2049</option>
+                                            <option value="2050">2050</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <select id="mesH" name="mesH" class="form-control input-sm" onchange="CalcularCodigo()">
+                                            <option value="01">Enero</option>
+                                            <option value="02">Febrero</option>
+                                            <option value="03">Marzo</option>
+                                            <option value="04">Abril</option>
+                                            <option value="05">Mayo</option>
+                                            <option value="06">Junio</option>
+                                            <option value="07">Julio</option>
+                                            <option value="08">Agosto</option>
+                                            <option value="09">Setiembre</option>
+                                            <option value="10">Octubre</option>
+                                            <option value="11">Noviembre</option>
+                                            <option value="12">Diciembre</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <label class="label">MCL - Fecha Inicio</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-calendar"></i>
+                            <input id="Mcl_fecha_inicioH" type="text" name="request" class="datepicker" data-dateformat='dd/mm/yy'>
+                        </label>
+                        <br />
+                        <label class="label">MCL - Fecha Fin</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-calendar"></i>
+                            <input id="Mcl_fecha_finH" type="text" name="request" class="datepicker" data-dateformat='dd/mm/yy'>
+                        </label>
+                        <br />
+                        <label class="label">ADR - Fecha Inicio</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-calendar"></i>
+                            <input id="Adr_fecha_inicioH" type="text" name="request" class="datepicker" data-dateformat='dd/mm/yy'>
+                        </label>
+                        <br />
+                        <label class="label">ADR - Fecha Fin</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-calendar"></i>
+                            <input id="Adr_fecha_finH" type="text" name="request" class="datepicker" data-dateformat='dd/mm/yy'>
+                        </label>
+                        <br />
+                        <label>
+                            <i></i>Activo @Html.CheckBoxFor(model => model.activo)
+                        </label>
+
+                    </section>
+                </div>
+            </fieldset>
+
+            <footer>
+                <a href="@Url.Action("Index", "Proceso")" class="btn btn-primary">Volver</a>
+                <input type="submit" class="btn btn-primary" name="submit" value="Modificar" onclick="ObtenerCombos()">
+            </footer>
+        </form>
+
+    </div>
+    <!-- end widget content -->
+</div>
+
+@section pagespecific {
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('body').css('zoom', '80%');
+        document.getElementById("anhoH").value = document.getElementById("anho").value;
+        document.getElementById("mesH").value = document.getElementById("mes").value;
+        document.getElementById("Mcl_fecha_inicioH").value = document.getElementById("mcl_fecha_inicio").value;
+        document.getElementById("Mcl_fecha_finH").value = document.getElementById("mcl_fecha_fin").value;
+        document.getElementById("Adr_fecha_inicioH").value = document.getElementById("adr_fecha_inicio").value;
+        document.getElementById("Adr_fecha_finH").value = document.getElementById("adr_fecha_fin").value;
+    });
+
+    function ObtenerCombos() {
+        debugger;
+        document.getElementById("anho").value = document.getElementById("anhoH").value;
+        document.getElementById("mes").value = document.getElementById("mesH").value;
+        document.getElementById("mcl_fecha_inicio").value = document.getElementById("Mcl_fecha_inicioH").value;
+        document.getElementById("mcl_fecha_fin").value = document.getElementById("Mcl_fecha_finH").value;
+        document.getElementById("adr_fecha_inicio").value = document.getElementById("Adr_fecha_inicioH").value;
+        document.getElementById("adr_fecha_fin").value = document.getElementById("Adr_fecha_finH").value;
+
+    }
+
+    function CalcularCodigo() {
+        document.getElementById("codigo").value = document.getElementById("anhoH").value + document.getElementById("mesH").value;
+    }
+
+    </script>
+}

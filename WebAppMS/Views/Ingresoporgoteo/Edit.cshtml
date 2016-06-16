@@ -1,0 +1,221 @@
+﻿@model WebAppMS.Models.DTOIngresoporgoteoM
+
+@{
+    ViewBag.Title = "Ingresoporgoteo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>Modificar Ingreso Por Goteo </h2>
+
+</header>
+
+<!-- widget div-->
+<div>
+
+    @if (Model.resultado == 1)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Información</h4>
+            <p>
+                Se modificó correctamente la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    @if (Model.resultado == 2)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Error</h4>
+            <p>
+                No se pudo modificar la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+        <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+        <form id="order-form" class="smart-form" novalidate="novalidate" method="post">
+            @Html.HiddenFor(model => model.ingresoporgoteo_id)
+            @Html.HiddenFor(model => model.celdaId)
+            <fieldset>
+                <div class="row">
+                    <section class="col col-6">
+                        <label class="label">Celda</label>
+                        <label class="select">
+                            @Html.DropDownList("ListaCelda123", (IEnumerable<SelectListItem>)ViewBag.ListaCelda, new { @class = "select" })
+                        </label>
+
+                        <br />
+                        <br />
+                        <label class="label">Área</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.codarea)
+                            @Html.ValidationMessageFor(model => model.codarea, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Flujo</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.flujo)
+                            @Html.ValidationMessageFor(model => model.flujo, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Tonelaje Chancado</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.tonelajechancado)
+                            @Html.ValidationMessageFor(model => model.tonelajechancado, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Ley Au Chancado</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.leyauchancado)
+                            @Html.ValidationMessageFor(model => model.leyauchancado, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Ley Ag Chancado</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.leyagchancado)
+                            @Html.ValidationMessageFor(model => model.leyagchancado, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Tonelaje Overliner</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.tonelaje_overliner_)
+                            @Html.ValidationMessageFor(model => model.tonelaje_overliner_, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Ley Au Overliner</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.leyauoverliner)
+                            @Html.ValidationMessageFor(model => model.leyauoverliner, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Ley Ag overliner</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.leyagoverliner)
+                            @Html.ValidationMessageFor(model => model.leyagoverliner, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Fecha Inicio Apilamiento</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-calendar"></i>
+                            @Html.HiddenFor(model => model.fechainicioapilamiento)
+                            <input id="Mcl_fecha_inicio" type="text" name="request" class="datepicker" data-dateformat='dd/mm/yy'>
+                        </label>
+                        <br />
+                        <label class="label">Fecha Fin Apilamiento</label>
+                        <label class="input">
+                            @Html.HiddenFor(model => model.fechafinapilamiento)
+                            <i class="icon-append fa fa-calendar"></i>
+                            <input id="Mcl_fecha_fin" type="text" name="request" class="datepicker" data-dateformat='dd/mm/yy' >
+                        </label>
+                        <br />
+                        <label class="label">Fecha Inicio Riego</label>
+                        <label class="input">
+                            @Html.HiddenFor(model => model.fechainicioriego)
+                            <i class="icon-append fa fa-calendar"></i>
+                            <input id="Mcl_fecha_inicioriego" type="text" name="request" class="datepicker" data-dateformat='dd/mm/yy' >
+                        </label>
+                        <br />
+                        <label class="label">Fecha Fin Riego</label>
+                        <label class="input">
+                            @Html.HiddenFor(model => model.fechafinriego)
+                            <i class="icon-append fa fa-calendar"></i>
+                            <input id="Mcl_fecha_finriego" type="text" name="request" class="datepicker" data-dateformat='dd/mm/yy'>
+                        </label>
+                        <br />
+                        <label class="label">Fecha Fin Real Riego</label>
+                        <label class="input">
+                            @Html.HiddenFor(model => model.fechafinrealriego)
+                            <i class="icon-append fa fa-calendar"></i>
+                            <input id="Mcl_fecha_finrealriego" type="text" name="request" class="datepicker" data-dateformat='dd/mm/yy' >
+                        </label>
+                        <br />
+                        <label class="label">Dias de Riego a la Fecha</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.diariegoalafecha)
+                            @Html.ValidationMessageFor(model => model.diariegoalafecha, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Dias Programados de Riego</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.diaprograriego)
+                            @Html.ValidationMessageFor(model => model.diaprograriego, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Onzas Au</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.onzasau)
+                            @Html.ValidationMessageFor(model => model.onzasau, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Onzas Ag</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.onzasag)
+                            @Html.ValidationMessageFor(model => model.onzasag, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Tms</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.tms)
+                            @Html.ValidationMessageFor(model => model.tms, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label>
+                            <i></i>Activo @Html.CheckBoxFor(model => model.activo)
+                        </label>
+                        <br />
+                    </section>
+                </div>
+            </fieldset>
+
+            <footer>
+                <a href="@Url.Action("Index", "Ingresoporgoteo")" class="btn btn-primary">Volver</a>
+                <input type="submit" class="btn btn-primary" name="submit" value="Modificar" onclick="ObtenerCombos()">
+            </footer>
+        </form>
+
+    </div>
+    <!-- end widget content -->
+</div>
+
+@section pagespecific {
+    <script type="text/javascript">
+
+            // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+            $(document).ready(function () {
+                $('body').css('zoom', '80%');
+
+                document.getElementById("Mcl_fecha_inicio").value = document.getElementById("fechainicioapilamiento").value;
+                document.getElementById("Mcl_fecha_fin").value = document.getElementById("fechafinapilamiento").value;
+                document.getElementById("Mcl_fecha_inicioriego").value = document.getElementById("fechainicioriego").value;
+                document.getElementById("Mcl_fecha_finriego").value = document.getElementById("fechafinriego").value;
+                document.getElementById("Mcl_fecha_finrealriego").value = document.getElementById("fechafinrealriego").value;
+            });
+    </script>
+}
+<script type="text/javascript">
+    function ObtenerCombos() {
+        debugger;
+        document.getElementById("celdaId").value = document.getElementById("ListaCelda123").value;
+        document.getElementById("fechainicioapilamiento").value = document.getElementById("Mcl_fecha_inicio").value;
+        document.getElementById("fechafinapilamiento").value = document.getElementById("Mcl_fecha_fin").value;
+        document.getElementById("fechainicioriego").value = document.getElementById("Mcl_fecha_inicioriego").value;
+        document.getElementById("fechafinriego").value = document.getElementById("Mcl_fecha_finriego").value;
+        document.getElementById("fechafinrealriego").value = document.getElementById("Mcl_fecha_finrealriego").value;
+    }
+
+</script>

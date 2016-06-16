@@ -1,0 +1,640 @@
+﻿@model WebAppMS.Models.DTOProd_chancadoraM
+
+@{
+    ViewBag.Title = "Prod_chancadora";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>Registro Producción Chancadora</h2>
+
+</header>
+
+<!-- widget div-->
+<div>
+    @if (Model.resultado == 1)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Información</h4>
+            <p>
+                Se registró correctamente la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    @if (Model.resultado == 2)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Error</h4>
+            <p>
+                No se pudo registrar la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+        <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+        <form id="order-form" class="smart-form" novalidate="novalidate" method="post">
+            @Html.HiddenFor(model => model.turno_id)
+            @Html.HiddenFor(model => model.fecha_desc)
+            @Html.HiddenFor(model => model.horas)
+            @Html.HiddenFor(model => model.minutos)
+            @Html.HiddenFor(model => model.horas_mantto)
+            @Html.HiddenFor(model => model.minutos_mantto)
+            @Html.HiddenFor(model => model.horas_operacion)
+            @Html.HiddenFor(model => model.minutos_operacion)
+            @Html.HiddenFor(model => model.produccion_id)
+
+            @Html.HiddenFor(model => model.tmh_ch_bal_desc)
+            @Html.HiddenFor(model => model.tmh_ch_ox_desc)
+            @Html.HiddenFor(model => model.ton_bal_faja_desc)
+
+
+            @Html.HiddenFor(model => model.h_op_ch_desc)
+            @Html.HiddenFor(model => model.h_operacion_desc)
+            @Html.HiddenFor(model => model.h_mantto_ch_desc)
+
+            <fieldset>
+                <div class="row">
+                    <section class="col col-6">
+                        <label class="label">Fecha Operación</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-calendar"></i>
+                            <input id="fecha_text" type="text" name="request" data-dateformat='dd/mm/yy' readonly ="readonly">
+
+                        </label>
+                        <br />
+                        <label class="label">Turno</label>
+                        <label class="select">
+                            @Html.DropDownList("ListaTurno123", (IEnumerable<SelectListItem>)ViewBag.ListaTurno, new { @class = "select", @disabled = "disabled" })
+                        </label>
+                        <br />
+                        <label class="label">Viajes CH.</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.viajes_ch)
+                            @Html.ValidationMessageFor(model => model.viajes_ch, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Ton. CH. Cam.</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.ton_ch_cam)
+                            @Html.ValidationMessageFor(model => model.ton_ch_cam, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Ton. CH. Ox.</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.ton_ch_ox)
+                            @Html.ValidationMessageFor(model => model.ton_ch_ox, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                       <label class="label">TMH. CH. Ox.</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.tmh_ch_ox, new { htmlAttributes = new { disabled = "disabled", @readonly = "readonly"} })
+                        </label>
+                        <br />
+                        <label class="label">Ton. Balanza Faja</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.ton_bal_faja, new { htmlAttributes = new { disabled = "disabled", @readonly = "readonly" } })
+                        </label>
+                        <br />
+                        <label class="label">TM. Acum. Ini. CH.</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.tm_acum_ini_ch)
+                            @Html.ValidationMessageFor(model => model.tm_acum_ini_ch, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">TM. Acum. Fin CH.</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.tm_acum_fin_ch)
+                            @Html.ValidationMessageFor(model => model.tm_acum_fin_ch, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">TMH CH. Balanza</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.tmh_ch_bal, new { htmlAttributes = new { disabled = "disabled", @readonly = "readonly" } })
+                        </label>
+                        <br />
+                        <label class="label">Horas. Op. CH.</label>
+                        <div class="row">
+                            <section class="col col-2">
+                                <select id="hora_hora_op_ch" name="Hora" class="form-control input-sm" onchange="CalcularDuracion()">
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                </select>
+                            </section>
+                            <section class="col col-2">
+                                <select id="hora_min_op_ch" name="Minutos" class="form-control input-sm" onchange="CalcularDuracion()">
+                                    <option value="00">00</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="47">47</option>
+                                    <option value="48">48</option>
+                                    <option value="49">49</option>
+                                    <option value="50">50</option>
+                                    <option value="51">51</option>
+                                    <option value="52">52</option>
+                                    <option value="53">53</option>
+                                    <option value="54">54</option>
+                                    <option value="55">55</option>
+                                    <option value="56">56</option>
+                                    <option value="57">57</option>
+                                    <option value="58">58</option>
+                                    <option value="59">59</option>
+                                </select>
+                            </section>
+                        </div>
+                        <br />
+                        <label class="label">Horas. Op. CH.</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.h_op_ch, new { htmlAttributes = new { disabled = "disabled", @readonly = "readonly" } })
+                        </label>
+                        <br />
+                        <label class="label">H. Mantto CH.</label>
+                        <div class="row">
+                            <section class="col col-2">
+                                <select id="hora_hora_mantto_ch" name="Hora" class="form-control input-sm" onchange="CalcularDuracion()">
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                </select>
+                            </section>
+                            <section class="col col-2">
+                                <select id="hora_min_mantto_ch" name="Minutos" class="form-control input-sm" onchange="CalcularDuracion()">
+                                    <option value="00">00</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="47">47</option>
+                                    <option value="48">48</option>
+                                    <option value="49">49</option>
+                                    <option value="50">50</option>
+                                    <option value="51">51</option>
+                                    <option value="52">52</option>
+                                    <option value="53">53</option>
+                                    <option value="54">54</option>
+                                    <option value="55">55</option>
+                                    <option value="56">56</option>
+                                    <option value="57">57</option>
+                                    <option value="58">58</option>
+                                    <option value="59">59</option>
+                                </select>
+                            </section>
+                        </div>
+                        <br />
+
+                        <label class="label">H. Mantto CH.</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.h_mantto_ch, new { htmlAttributes = new { disabled = "disabled", @readonly = "readonly" } })
+                        </label>
+                        <br />
+                        <label class="label">Horas Operacion Planta/Mina</label>
+                        <div class="row">
+                            <section class="col col-2">
+                                <select id="hora_hora_operacion" name="Hora" class="form-control input-sm" >
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                </select>
+                            </section>
+                            <section class="col col-2">
+                                <select id="hora_min_operacion" name="Minutos" class="form-control input-sm" >
+                                    <option value="00">00</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="47">47</option>
+                                    <option value="48">48</option>
+                                    <option value="49">49</option>
+                                    <option value="50">50</option>
+                                    <option value="51">51</option>
+                                    <option value="52">52</option>
+                                    <option value="53">53</option>
+                                    <option value="54">54</option>
+                                    <option value="55">55</option>
+                                    <option value="56">56</option>
+                                    <option value="57">57</option>
+                                    <option value="58">58</option>
+                                    <option value="59">59</option>
+                                </select>
+                            </section>
+                        </div>
+                        <br />                     
+                        <label class="label">Horas Operacion Planta/Mina</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.h_operacion, new { htmlAttributes = new { disabled = "disabled", @readonly = "readonly" } })
+                        </label>
+                        <br />                        
+                        @*<label class="label">Horas calendario</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.h_calendario)
+                            @Html.ValidationMessageFor(model => model.h_calendario, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">% (D) CH.</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.porc_d_ch)
+                            @Html.ValidationMessageFor(model => model.porc_d_ch, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">% (UD) CH.</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.porc_ud_ch)
+                            @Html.ValidationMessageFor(model => model.porc_ud_ch, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">% (U) CH.</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.porc_u_ch)
+                            @Html.ValidationMessageFor(model => model.porc_u_ch, "", new { @class = "text-danger" })
+                        </label>
+                        <br />*@
+                        <label>
+                            <i></i>Activo @Html.CheckBoxFor(model => model.activo)
+                        </label>
+                    </section>
+                </div>
+            </fieldset>
+
+            <footer>
+                <a href="@Url.Action("Index", "Produccion")" class="btn btn-primary">Volver</a>
+                @if (Model.resultado != 1)
+                {
+                <input id="Grabarbtn" type="submit" class="btn btn-primary" name="submit" value="Grabar" onclick="ObtenerCombos()">
+                }
+            </footer>
+        </form>
+
+    </div>
+    <!-- end widget content -->
+
+</div>
+@section pagespecific {
+    <script type="text/javascript">
+
+            // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+            $(document).ready(function () {
+                $('body').css('zoom', '80%');
+                document.getElementById("fecha_text").value = document.getElementById("fecha_desc").value;
+
+                if (document.getElementById("horas").value < 10) {
+                    document.getElementById("hora_hora_op_ch").value = "0" + parseInt(document.getElementById("horas").value);
+                }
+                else {
+                    document.getElementById("hora_hora_op_ch").value = document.getElementById("horas").value;
+                }
+                if (document.getElementById("minutos").value < 10) {
+                    document.getElementById("hora_min_op_ch").value = "0" + parseInt(document.getElementById("minutos").value);
+                }
+                else {
+                    document.getElementById("hora_min_op_ch").value = document.getElementById("minutos").value;
+                }
+                if (document.getElementById("horas_mantto").value < 10) {
+                    document.getElementById("hora_hora_mantto_ch").value = "0" + parseInt(document.getElementById("horas_mantto").value);
+                }
+                else {
+                    document.getElementById("hora_hora_mantto_ch").value = document.getElementById("horas_mantto").value;
+                }
+                if (document.getElementById("minutos_mantto").value < 10) {
+                    document.getElementById("hora_min_mantto_ch").value = "0" + parseInt(document.getElementById("minutos_mantto").value);
+                }
+                else {
+                    document.getElementById("hora_min_mantto_ch").value = document.getElementById("minutos_mantto").value;
+                }
+                if (document.getElementById("horas_operacion").value < 10) {
+                    document.getElementById("hora_hora_operacion").value = "0" + parseInt(document.getElementById("horas_operacion").value);
+                }
+                else {
+                    document.getElementById("hora_hora_operacion").value = document.getElementById("horas_operacion").value;
+                }
+                if (document.getElementById("minutos_operacion").value < 10) {
+                    document.getElementById("hora_min_operacion").value = "0" + parseInt(document.getElementById("minutos_operacion").value);
+                }
+                else {
+                    document.getElementById("hora_min_operacion").value = document.getElementById("minutos_operacion").value;
+                }
+
+                $('#ton_ch_cam').on("change", function () {
+                    CalcularTMH();
+                });
+                $('#h_op_ch').on("change", function () {
+                    CalcularTMH();
+                });
+                $('#hora_hora_op_ch').on("change", function () {
+                    CalcularTMH();
+                    CalcularTMH_CH_Balanza();
+                });
+                $('#hora_min_op_ch').on("change", function () {
+                    CalcularTMH();
+                    CalcularTMH_CH_Balanza();
+                });
+
+
+                $('#tm_acum_ini_ch').on("change", function () {
+                    CalcularTonBalFaja();
+                    CalcularTMH_CH_Balanza();
+                });
+                $('#tm_acum_fin_ch').on("change", function () {
+                    CalcularTonBalFaja();
+                    CalcularTMH_CH_Balanza();
+                });
+
+
+                $('#ton_bal_faja').on("change", function () {
+                    CalcularTMH_CH_Balanza();
+                });
+                $('#hora_hora_operacion').on("change", function () {
+                    CalcularDuracion();                    
+                });
+                $('#hora_min_operacion').on("change", function () {
+                    CalcularDuracion();                    
+                });
+
+                
+                
+            });
+
+
+
+            function ObtenerCombos() {
+                debugger;
+                document.getElementById("turno_id").value = document.getElementById("ListaTurno123").value;
+                document.getElementById("fecha_desc").value = document.getElementById("fecha_text").value;
+
+                //document.getElementById("tmh_ch_ox_desc").value = document.getElementById("tmh_ch_ox").value;
+                //document.getElementById("ton_bal_faja_desc").value = document.getElementById("ton_bal_faja").value;
+                //document.getElementById("tmh_ch_bal_desc").value = document.getElementById("tmh_ch_bal").value;
+            }
+
+            function CalcularDuracion() {
+                debugger;
+                document.getElementById("h_op_ch").value = parseInt(document.getElementById("hora_hora_op_ch").value) + (document.getElementById("hora_min_op_ch").value / 60);
+                document.getElementById("h_mantto_ch").value = parseInt(document.getElementById("hora_hora_mantto_ch").value) + (document.getElementById("hora_min_mantto_ch").value / 60);
+                document.getElementById("h_operacion").value = parseInt(document.getElementById("hora_hora_operacion").value) + (document.getElementById("hora_min_operacion").value / 60);
+
+                document.getElementById("h_op_ch").value = document.getElementById("h_op_ch").value.replace(".", ",");
+                document.getElementById("h_mantto_ch").value = document.getElementById("h_mantto_ch").value.replace(".", ",");
+                document.getElementById("h_operacion").value = document.getElementById("h_operacion").value.replace(".", ",");
+
+                document.getElementById("h_op_ch_desc").value = document.getElementById("h_op_ch").value;
+                document.getElementById("h_mantto_ch_desc").value = document.getElementById("h_mantto_ch").value;
+                document.getElementById("h_operacion_desc").value = document.getElementById("h_operacion").value;
+
+
+                document.getElementById("horas").value = document.getElementById("hora_hora_op_ch").value;
+                document.getElementById("minutos").value = document.getElementById("hora_min_op_ch").value;
+
+                document.getElementById("horas_mantto").value = document.getElementById("hora_hora_mantto_ch").value;
+                document.getElementById("minutos_mantto").value = document.getElementById("hora_min_mantto_ch").value;
+
+                document.getElementById("horas_operacion").value = document.getElementById("hora_hora_operacion").value;
+                document.getElementById("minutos_operacion").value = document.getElementById("hora_min_operacion").value;
+
+            }
+
+            function CalcularTMH() {
+                debugger;
+                var var_h_op_ch = document.getElementById("h_op_ch").value.replace(",", ".");
+                var var_ton_ch_cam = document.getElementById("ton_ch_cam").value.replace(",", ".");
+                if (var_h_op_ch.trim() == "" || var_h_op_ch.trim() == "0") {
+                    document.getElementById("tmh_ch_ox").value = 0;
+                    document.getElementById("tmh_ch_ox_desc").value = 0;
+                }
+                else {
+                    document.getElementById("tmh_ch_ox").value = (var_ton_ch_cam / var_h_op_ch);                    
+                    document.getElementById("tmh_ch_ox").value = document.getElementById("tmh_ch_ox").value.replace(".", ",");
+                    document.getElementById("tmh_ch_ox_desc").value = document.getElementById("tmh_ch_ox").value;
+                }
+            }
+
+            function CalcularTonBalFaja() {
+                debugger;
+                document.getElementById("ton_bal_faja").value = document.getElementById("tm_acum_fin_ch").value - document.getElementById("tm_acum_ini_ch").value;
+                document.getElementById("ton_bal_faja_desc").value = document.getElementById("ton_bal_faja").value;
+            }
+
+            function CalcularTMH_CH_Balanza() {
+                debugger;
+                var var_h_op_ch = document.getElementById("h_op_ch").value.replace(",", ".");
+                var var_ton_bal_faja = document.getElementById("ton_bal_faja").value.replace(",", ".");
+                var rpta;
+                if (var_h_op_ch.trim() == "" || var_h_op_ch.trim() == "0") {
+                    document.getElementById("tmh_ch_bal").value = 0;
+                    document.getElementById("tmh_ch_bal_desc").value = document.getElementById("tmh_ch_bal").value;
+                }
+                else {
+                    rpta = (var_ton_bal_faja / var_h_op_ch);
+                    document.getElementById("tmh_ch_bal").value = rpta.toString().replace(".", ",");
+                    document.getElementById("tmh_ch_bal_desc").value = document.getElementById("tmh_ch_bal").value;
+                }
+            }
+
+
+    </script>
+}

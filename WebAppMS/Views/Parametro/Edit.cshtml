@@ -1,0 +1,133 @@
+﻿@model WebAppMS.Models.DTOParametroM
+
+@{
+    ViewBag.Title = "Parametro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>Modificar Parametro </h2>
+
+</header>
+
+<!-- widget div-->
+<div>
+
+    @if (Model.resultado == 1)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Información</h4>
+            <p>
+                Se modificó correctamente la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    @if (Model.resultado == 2)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Error</h4>
+            <p>
+                No se pudo modificar la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+        <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+        <form id="order-form" class="smart-form" novalidate="novalidate" method="post">
+            @Html.HiddenFor(model => model.parametro_id)
+            @Html.HiddenFor(model => model.usuario_crea)
+            @Html.HiddenFor(model => model.fecha_crea)
+            @Html.HiddenFor(model => model.usuario_mod)
+            @Html.HiddenFor(model => model.fecha_mod)            
+            <fieldset>
+                <div class="row">
+                    <section class="col col-6">
+
+                        <label class="label">Horas de Operación BB Lixiviación (Hr)</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.horas)
+                            @Html.ValidationMessageFor(model => model.horas, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Totalizador inicial de Flujometro a Lixiviación (m3)</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.total_ini)
+                            @Html.ValidationMessageFor(model => model.total_ini, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Totalizador final de Flujometro a Lixiviación (m3)</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.total_fin)
+                            @Html.ValidationMessageFor(model => model.total_fin, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Flujo del día  TFINLIX-TINLIX (m3)</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.flujo_dia)
+                            @Html.ValidationMessageFor(model => model.flujo_dia, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Nivel de la poza de Solución Rica (PLS) (msnm)</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.nivel_poza_pls)
+                            @Html.ValidationMessageFor(model => model.nivel_poza_pls, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Nivel de la Poza de Mayores Eventos (PME) (msnm)</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.nivel_poza_may)
+                            @Html.ValidationMessageFor(model => model.nivel_poza_may, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Volumen de la poza de Solución Rica (PLS) (m3)</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.vol_poza_pls)
+                            @Html.ValidationMessageFor(model => model.vol_poza_pls, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Volumen de la Poza de Mayores Eventos (PME) (m3)</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.vol_poza_may)
+                            @Html.ValidationMessageFor(model => model.vol_poza_may, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label>
+                            <i></i>Activo @Html.CheckBoxFor(model => model.activo)
+                        </label>
+                    </section>
+                </div>
+            </fieldset>
+
+            <footer>
+                <a href="@Url.Action("Index", "Parametro")" class="btn btn-primary">Volver</a>
+                <input type="submit" class="btn btn-primary" name="submit" value="Modificar">
+            </footer>
+        </form>
+
+    </div>
+    <!-- end widget content -->
+</div>
+@section pagespecific {
+    <script type="text/javascript">
+
+            // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+            $(document).ready(function () {
+                $('body').css('zoom', '80%');
+            });
+    </script>
+}

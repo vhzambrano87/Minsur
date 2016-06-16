@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{460B1EA3-6F46-4275-8CB2-63A0CF62A3E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessEntities</RootNamespace>
+    <AssemblyName>BusinessEntities</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTOAdsorcion.cs" />
+    <Compile Include="DTOAguas_operaciones.cs" />
+    <Compile Include="DTOApilamiento.cs" />
+    <Compile Include="DTOCamiones.cs" />
+    <Compile Include="DTOChancadora.cs" />
+    <Compile Include="DTOConsumo_combustible.cs" />
+    <Compile Include="DTOControl_dig_lixiviacion.cs" />
+    <Compile Include="DTODesorcion.cs" />
+    <Compile Include="DTOEstado.cs" />
+    <Compile Include="DTOFlujos_presiones.cs" />
+    <Compile Include="DTOGuardia.cs" />
+    <Compile Include="DTOIngresonivelespoza.cs" />
+    <Compile Include="DTOIngresoporgoteo.cs" />
+    <Compile Include="DTOLista.cs" />
+    <Compile Include="DTOLista_valor.cs" />
+    <Compile Include="DTOMant_equipos.cs" />
+    <Compile Include="DTOMant_produccion_x_hora.cs" />
+    <Compile Include="DTOOpcion.cs" />
+    <Compile Include="DTOParada.cs" />
+    <Compile Include="DTOParametro.cs" />
+    <Compile Include="DTOProceso.cs" />
+    <Compile Include="DTOProduccion.cs" />
+    <Compile Include="DTOProd_chancadora.cs" />
+    <Compile Include="DTOProd_ore_bin.cs" />
+    <Compile Include="DTORol.cs" />
+    <Compile Include="DTORol_opcion.cs" />
+    <Compile Include="DTOSegOpcion.cs" />
+    <Compile Include="DTOTipo_parada.cs" />
+    <Compile Include="DTOTurno_lix.cs" />
+    <Compile Include="DTOUsuario.cs" />
+    <Compile Include="DTOUsuario_rol.cs" />
+    <Compile Include="DTOUtilizacion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

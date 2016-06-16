@@ -1,0 +1,202 @@
+﻿@model WebAppMS.Models.DTOAdsorcionM
+
+@{
+    ViewBag.Title = "Adsorcion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>Modificar Adsorcion </h2>
+
+</header>
+
+<!-- widget div-->
+<div>
+
+    @if (Model.resultado == 1)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Información</h4>
+            <p>
+                Se modificó correctamente la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    @if (Model.resultado == 2)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Error</h4>
+            <p>
+                No se pudo modificar la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+        <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+        <form id="order-form" class="smart-form" novalidate="novalidate" method="post">
+            @Html.HiddenFor(model => model.adsorcion_id)
+            @Html.HiddenFor(model => model.fecha)
+            @Html.HiddenFor(model => model.fecha_desc)
+            @Html.HiddenFor(model => model.usuario_crea)
+            @Html.HiddenFor(model => model.fecha_crea)
+            @Html.HiddenFor(model => model.usuario_mod)
+            @Html.HiddenFor(model => model.fecha_mod)            
+            <fieldset>
+                <div class="row">
+                    <section class="col col-6">
+                        <label class="label">Fecha</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-calendar"></i>
+                            <input id="fecha_text" type="text" name="request" class="datepicker" data-dateformat='dd/mm/yy'>
+
+                        </label>
+                        <br />
+                        <label class="label">Horas</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.horas)
+                            @Html.ValidationMessageFor(model => model.horas, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        
+                        <table style="width:100%">
+                            <tr>
+                                <td><label class="label">Au Ingreso Circuito N1</label>
+                                    <label class="input">
+                                        @Html.EditorFor(model => model.au_ing_n1)
+                                        @Html.ValidationMessageFor(model => model.au_ing_n1, "", new { @class = "text-danger" })
+                                    </label>
+                                </td>
+                                <td>&nbsp;&nbsp;&nbsp;</td>
+                                <td>
+                                    <label class="label">Ag Ingreso Circuito N1</label>
+                                    <label class="input">
+                                        @Html.EditorFor(model => model.ag_ing_n1)
+                                        @Html.ValidationMessageFor(model => model.ag_ing_n1, "", new { @class = "text-danger" })
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="label">Au Ingreso Circuito N2</label>
+                                    <label class="input">
+                                        @Html.EditorFor(model => model.au_ing_n2)
+                                        @Html.ValidationMessageFor(model => model.au_ing_n2, "", new { @class = "text-danger" })
+                                    </label>
+                                </td>
+                                <td>&nbsp;&nbsp;&nbsp;</td>
+                                <td>
+                                    <label class="label">Ag Ingreso Circuito N2</label>
+                                    <label class="input">
+                                        @Html.EditorFor(model => model.ag_ing_n2)
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="label">Au Salida Circuito N1</label>
+                                    <label class="input">
+                                        @Html.EditorFor(model => model.au_sal_n1)
+                                        @Html.ValidationMessageFor(model => model.au_sal_n1, "", new { @class = "text-danger" })
+                                    </label>
+                                </td>
+                                <td>&nbsp;&nbsp;&nbsp;</td>
+                                <td>
+                                    <label class="label">Ag Salida Circuito N1</label>
+                                    <label class="input">
+                                        @Html.EditorFor(model => model.ag_sal_n1)
+                                        @Html.ValidationMessageFor(model => model.ag_sal_n1, "", new { @class = "text-danger" })
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="label">Au Salida Circuito N2</label>
+                                    <label class="input">
+                                        @Html.EditorFor(model => model.au_sal_n2)
+                                        @Html.ValidationMessageFor(model => model.au_sal_n2, "", new { @class = "text-danger" })
+                                    </label>
+                                </td>
+                                <td>&nbsp;&nbsp;&nbsp;</td>
+                                <td>
+                                    <label class="label">Ag Salida Circuito N2</label>
+                                    <label class="input">
+                                        @Html.EditorFor(model => model.ag_sal_n2)
+                                        @Html.ValidationMessageFor(model => model.ag_sal_n2, "", new { @class = "text-danger" })
+                                    </label>
+                                </td>
+                            </tr>
+
+                        </table>
+
+                        <br />
+                        <br />
+                        <label class="label">Totalizador Inicial del Flujometro Tren 1(m3)</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.flujo_ini_1)
+                            @Html.ValidationMessageFor(model => model.flujo_ini_1, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Totalizador Inicial del Flujometro Tren 2(m3)</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.flujo_ini_2)
+                            @Html.ValidationMessageFor(model => model.flujo_ini_2, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Totalizador Final del Flujometro Tren 1(m3)</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.flujo_fin_1)
+                            @Html.ValidationMessageFor(model => model.flujo_fin_1, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Totalizador Final del Flujometro Tren 2(m3)</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.flujo_fin_2)
+                            @Html.ValidationMessageFor(model => model.flujo_fin_2, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label>
+                            <i></i>Activo @Html.CheckBoxFor(model => model.activo)
+                        </label>
+                    </section>
+                </div>
+            </fieldset>
+
+            <footer>
+                <a href="@Url.Action("Index", "Adsorcion")" class="btn btn-primary">Volver</a>
+                <input type="submit" class="btn btn-primary" name="submit" value="Modificar" onclick="ObtenerCombos()">
+            </footer>
+        </form>
+
+    </div>
+    <!-- end widget content -->
+</div>
+@section pagespecific {
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('body').css('zoom', '80%');
+        document.getElementById("fecha_text").value = document.getElementById("fecha_desc").value;
+    });
+
+    function ObtenerCombos() {
+        debugger;
+        document.getElementById("fecha").value = document.getElementById("fecha_text").value;
+        document.getElementById("fecha_desc").value = document.getElementById("fecha_text").value;
+    }
+
+</script>
+}

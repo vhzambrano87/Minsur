@@ -1,0 +1,387 @@
+﻿@model WebAppMS.Models.DTODesorcionM
+
+@{
+    ViewBag.Title = "Desorcion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>Registro Desorcion</h2>
+
+</header>
+
+<!-- widget div-->
+<div>
+    @if (Model.resultado == 1)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Información</h4>
+            <p>
+                Se registró correctamente la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    @if (Model.resultado == 2)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Error</h4>
+            <p>
+                No se pudo registrar la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+        <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+        <form id="order-form" class="smart-form" novalidate="novalidate" method="post">
+
+            @Html.HiddenFor(model => model.fecha_desc)
+            @Html.HiddenFor(model => model.mes)
+            
+            @Html.HiddenFor(model => model.hora_inicio)
+            @Html.HiddenFor(model => model.hora_fin)
+
+            @Html.HiddenFor(model => model.usuario_crea)
+            @Html.HiddenFor(model => model.fecha_crea)
+            @Html.HiddenFor(model => model.usuario_mod)
+            @Html.HiddenFor(model => model.fecha_mod)            
+            <fieldset>
+                <div class="row">
+                    <section class="col col-6">
+                        <label class="label">Fecha</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-calendar"></i>
+                            <input id="fecha_text" type="text" name="request" class="datepicker" data-dateformat='dd/mm/yy'>
+
+                        </label>
+                        <br />
+                        <label class="label">Num. Fundición</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.num_fundicion)
+                            @Html.ValidationMessageFor(model => model.num_fundicion, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Mes</label>
+                            <select id="mesH" name="mesH" class="form-control input-sm">
+                                <option value="01">Enero</option>
+                                <option value="02">Febrero</option>
+                                <option value="03">Marzo</option>
+                                <option value="04">Abril</option>
+                                <option value="05">Mayo</option>
+                                <option value="06">Junio</option>
+                                <option value="07">Julio</option>
+                                <option value="08">Agosto</option>
+                                <option value="09">Setiembre</option>
+                                <option value="10">Octubre</option>
+                                <option value="11">Noviembre</option>
+                                <option value="12">Diciembre</option>
+                            </select>
+                            <br />
+                            <label class="label">Num. Desorción</label>
+                            <label class="input">
+                                @Html.EditorFor(model => model.num_desorcion)
+                                @Html.ValidationMessageFor(model => model.num_desorcion, "", new { @class = "text-danger" })
+                            </label>
+                            <br />
+                            <label class="label">Num. Desorción Mes</label>
+                            <label class="input">
+                                @Html.EditorFor(model => model.num_desorcion_mes)
+                                @Html.ValidationMessageFor(model => model.num_desorcion_mes, "", new { @class = "text-danger" })
+                            </label>
+                            <br />
+                            <label class="label">Num. col. Descarga</label>
+                            <label class="input">
+                                @Html.EditorFor(model => model.num_col_desc)
+                                @Html.ValidationMessageFor(model => model.num_col_desc, "", new { @class = "text-danger" })
+                            </label>
+                            <br />
+                            <label class="label">Peso Col. Descarga</label>
+                            <label class="input">
+                                @Html.EditorFor(model => model.peso_col_desc)
+                                @Html.ValidationMessageFor(model => model.peso_col_desc, "", new { @class = "text-danger" })
+                            </label>
+                            <br />
+                            <label class="label">Hora Inicio</label>
+                            <div class="row">
+                                <section class="col col-2">
+                                    <select id="hora_hora_iniH" name="Hora" class="form-control input-sm">
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                    </select>
+                                    </section>
+                                <section class="col col-2">
+                                    <select id="hora_min_iniH" name="Minutos" class="form-control input-sm">
+                                        <option value="00">00</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
+                                        <option value="30">30</option>
+                                        <option value="31">31</option>
+                                        <option value="32">32</option>
+                                        <option value="33">33</option>
+                                        <option value="34">34</option>
+                                        <option value="35">35</option>
+                                        <option value="36">36</option>
+                                        <option value="37">37</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                        <option value="45">45</option>
+                                        <option value="46">46</option>
+                                        <option value="47">47</option>
+                                        <option value="48">48</option>
+                                        <option value="49">49</option>
+                                        <option value="50">50</option>
+                                        <option value="51">51</option>
+                                        <option value="52">52</option>
+                                        <option value="53">53</option>
+                                        <option value="54">54</option>
+                                        <option value="55">55</option>
+                                        <option value="56">56</option>
+                                        <option value="57">57</option>
+                                        <option value="58">58</option>
+                                        <option value="59">59</option>
+                                    </select>
+                                  </section>
+                                </div>
+                            <br />
+                            <label class="label">Hora Fin</label>
+                        <div class="row">
+                            <section class="col col-2">
+                                <select id="hora_hora_finH" name="Hora" class="form-control input-sm">
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                </select>
+                            </section>
+                            <section class="col col-2">
+                                <select id="hora_min_finH" name="Minutos" class="form-control input-sm">
+                                    <option value="00">00</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                    <option value="44">44</option>
+                                    <option value="45">45</option>
+                                    <option value="46">46</option>
+                                    <option value="47">47</option>
+                                    <option value="48">48</option>
+                                    <option value="49">49</option>
+                                    <option value="50">50</option>
+                                    <option value="51">51</option>
+                                    <option value="52">52</option>
+                                    <option value="53">53</option>
+                                    <option value="54">54</option>
+                                    <option value="55">55</option>
+                                    <option value="56">56</option>
+                                    <option value="57">57</option>
+                                    <option value="58">58</option>
+                                    <option value="59">59</option>
+                                </select>
+                            </section>
+                        </div>
+                            <br />
+                            <label class="label">Au Rico</label>
+                            <label class="input">
+                                @Html.EditorFor(model => model.au_rico)
+                                @Html.ValidationMessageFor(model => model.au_rico, "", new { @class = "text-danger" })
+                            </label>
+                            <br />
+                            <label class="label">Au Pobre</label>
+                            <label class="input">
+                                @Html.EditorFor(model => model.au_pobre)
+                                @Html.ValidationMessageFor(model => model.au_pobre, "", new { @class = "text-danger" })
+                            </label>
+                            <br />
+                            <label class="label">Ag Rico</label>
+                            <label class="input">
+                                @Html.EditorFor(model => model.ag_rico)
+                                @Html.ValidationMessageFor(model => model.ag_rico, "", new { @class = "text-danger" })
+                            </label>
+                            <br />
+                            <label class="label">Ag Pobre</label>
+                            <label class="input">
+                                @Html.EditorFor(model => model.ag_pobre)
+                                @Html.ValidationMessageFor(model => model.ag_pobre, "", new { @class = "text-danger" })
+                            </label>
+                            <br />
+                            <label class="label">Hg Rico</label>
+                            <label class="input">
+                                @Html.EditorFor(model => model.hg_rico)
+                                @Html.ValidationMessageFor(model => model.hg_rico, "", new { @class = "text-danger" })
+                            </label>
+                            <br />
+                            <label class="label">Hg Pobre</label>
+                            <label class="input">
+                                @Html.EditorFor(model => model.hg_pobre)
+                                @Html.ValidationMessageFor(model => model.hg_pobre, "", new { @class = "text-danger" })
+                            </label>
+                            <br />
+                        <label>
+                            <i></i>Activo @Html.CheckBoxFor(model => model.activo)
+                        </label>
+                            
+                    </section>
+                </div>
+            </fieldset>
+
+            <footer>
+                <a href="@Url.Action("Index", "Desorcion")" class="btn btn-primary">Volver</a>
+                <input type="submit" class="btn btn-primary" name="submit" value="Grabar" onclick="ObtenerCombos()">
+            </footer>
+        </form>
+
+    </div>
+    <!-- end widget content -->
+
+</div>
+@section pagespecific {
+    <script type="text/javascript">
+
+            // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+            $(document).ready(function () {
+                $('body').css('zoom', '80%');
+                document.getElementById("fecha_text").value = document.getElementById("fecha_desc").value;
+            });
+    </script>
+}
+
+<script type="text/javascript">
+
+    function ObtenerCombos() {
+        debugger;
+        document.getElementById("fecha_desc").value = document.getElementById("fecha_text").value;
+        document.getElementById("mes").value = document.getElementById("mesH").value;
+
+        document.getElementById("hora_inicio").value = document.getElementById("hora_hora_iniH").value + ":" + document.getElementById("hora_min_iniH").value;
+        document.getElementById("hora_fin").value = document.getElementById("hora_hora_finH").value + ":" + document.getElementById("hora_min_finH").value;
+
+    }
+
+</script>

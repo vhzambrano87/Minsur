@@ -1,0 +1,103 @@
+﻿@model WebAppMS.Models.DTOLista_valorM
+
+@{
+    ViewBag.Title = "Lista_valor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>Modificar Lista Valor</h2>
+
+</header>
+
+<!-- widget div-->
+<div>
+    @if (Model.resultado == 1)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Información</h4>
+            <p>
+                Se modificó correctamente la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    @if (Model.resultado == 2)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Error</h4>
+            <p>
+                No se pudo modificar la información.
+            </p>
+            <br>
+        </div>
+    }
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+        <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+        <form id="order-form" class="smart-form" novalidate="novalidate" method="post">
+            @Html.HiddenFor(model => model.lista_valor_id)
+            @Html.HiddenFor(model => model.lista_id)
+            @Html.HiddenFor(model => model.usuario_crea)
+            @Html.HiddenFor(model => model.fecha_crea)
+            @Html.HiddenFor(model => model.usuario_mod)
+            @Html.HiddenFor(model => model.fecha_mod)
+            @Html.HiddenFor(model => model.resultado)
+            <fieldset>
+                <div class="row">
+                    <section class="col col-6">
+                        <label class="label">Lista</label>
+                        <label class="select">
+                            @Html.DropDownList("Lista123", (IEnumerable<SelectListItem>)ViewBag.Lista, new { @class = "select" })
+                        </label>
+                        <br />
+                        <label class="label">Valor</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.valor)
+                        </label>
+                        <br />
+                        <label>
+                            <i></i>Activo @Html.CheckBoxFor(model => model.activo)
+                        </label>
+                    </section>
+                </div>
+            </fieldset>
+
+            <footer>
+                <a href="@Url.Action("Index", "Lista_valor")" class="btn btn-primary">Volver</a>
+                <input type="submit" class="btn btn-primary" name="submit" value="Modificar" onclick="ObtenerCombos()">
+            </footer>
+        </form>
+
+    </div>
+    <!-- end widget content -->
+
+</div>
+@section pagespecific {
+    <script type="text/javascript">
+
+            // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+            $(document).ready(function () {
+                $('body').css('zoom', '80%');
+            });
+    </script>
+}
+<script type="text/javascript">
+    function ObtenerCombos() {
+        debugger;
+        document.getElementById("lista_id").value = document.getElementById("Lista").value;
+
+    }
+
+</script>

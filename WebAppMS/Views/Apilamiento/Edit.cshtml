@@ -1,0 +1,203 @@
+﻿@model WebAppMS.Models.DTOApilamientoM
+
+@{
+    ViewBag.Title = "Apilamiento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
+    <h2>Modificar Apilamiento </h2>
+
+</header>
+
+<!-- widget div-->
+<div>
+
+    @if (Model.resultado == 1)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Información</h4>
+            <p>
+                Se modificó correctamente la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    @if (Model.resultado == 2)
+    {
+        <div class="alert alert-block alert-info">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading">Error</h4>
+            <p>
+                No se pudo modificar la información.
+            </p>
+            <br>
+        </div>
+    }
+
+    <!-- widget edit box -->
+    <div class="jarviswidget-editbox">
+        <!-- This area used as dropdown edit box -->
+
+    </div>
+    <!-- end widget edit box -->
+    <!-- widget content -->
+    <div class="widget-body no-padding">
+
+        <form id="order-form" class="smart-form" novalidate="novalidate" method="post">
+            @Html.HiddenFor(model => model.apilamiento_id)
+            @Html.HiddenFor(model => model.fecha_desc)
+            @Html.HiddenFor(model => model.turno_id)
+            @Html.HiddenFor(model => model.usuario_crea)
+            @Html.HiddenFor(model => model.fecha_crea)
+   
+            <fieldset>
+                <div class="row">
+                    <section class="col col-6">
+                        <label class="label">Fecha</label>
+                        <label class="input">
+                            <i class="icon-append fa fa-calendar"></i>
+                            <input id="fecha_text" type="text" name="request" class="datepicker" data-dateformat='dd/mm/yy'>
+                        </label>
+                        <br />
+                        <label class="label">Turno</label>
+                        <label class="select">
+                            @Html.DropDownList("ListaTurno123", (IEnumerable<SelectListItem>)ViewBag.ListaTurno, new { @class = "select" })
+                        </label>
+                        <br />
+                        <label class="label">TMH Mineral</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.tmh_mineral)
+                            @Html.ValidationMessageFor(model => model.tmh_mineral, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Ley Au Mineral</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.ley_au_mineral)
+                            @Html.ValidationMessageFor(model => model.ley_au_mineral, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Ley Ag Mineral</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.ley_ag_mineral)
+                            @Html.ValidationMessageFor(model => model.ley_ag_mineral, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">TMH ROM</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.tmh_rom)
+                            @Html.ValidationMessageFor(model => model.tmh_rom, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Ley Au ROM</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.ley_au_rom)
+                            @Html.ValidationMessageFor(model => model.ley_au_rom, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Ley Ag ROM</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.ley_ag_rom)
+                            @Html.ValidationMessageFor(model => model.ley_ag_rom, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Origen</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.origen)
+                        </label>
+                        <br />
+                        <label class="label">Destino</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.destino)
+                        </label>
+                        <br />
+                        <label class="label">PH</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.ph)
+                            @Html.ValidationMessageFor(model => model.ph, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Humedad</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.humedad)
+                            @Html.ValidationMessageFor(model => model.humedad, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Ley Prom. Au</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.ley_prom_au)
+                            @Html.ValidationMessageFor(model => model.ley_prom_au, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Ley Prom. Ag</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.ley_prom_ag)
+                            @Html.ValidationMessageFor(model => model.ley_prom_ag, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Onzas Au</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.onzas_au)
+                            @Html.ValidationMessageFor(model => model.onzas_au, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Onzas Ag</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.onzas_ag)
+                            @Html.ValidationMessageFor(model => model.onzas_ag, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Densidad</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.densidad)
+                            @Html.ValidationMessageFor(model => model.densidad, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label class="label">Volumen</label>
+                        <label class="input">
+                            @Html.EditorFor(model => model.volumen)
+                            @Html.ValidationMessageFor(model => model.volumen, "", new { @class = "text-danger" })
+                        </label>
+                        <br />
+                        <label>
+                            <i></i>Activo @Html.CheckBoxFor(model => model.activo)
+                        </label>
+
+                    </section>
+                </div>
+            </fieldset>
+
+            <footer>
+                <a href="@Url.Action("Index", "Apilamiento")" class="btn btn-primary">Volver</a>
+                <input type="submit" class="btn btn-primary" name="submit" value="Modificar" onclick="ObtenerCombos()">
+            </footer>
+        </form>
+
+    </div>
+    <!-- end widget content -->
+</div>
+
+@section pagespecific {
+    <script type="text/javascript">
+
+            // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+            $(document).ready(function () {
+                $('body').css('zoom', '80%');
+                document.getElementById("fecha_text").value = document.getElementById("fecha_desc").value;
+            });
+    </script>
+}
+
+<script type="text/javascript">
+
+    function ObtenerCombos() {
+        debugger;
+        document.getElementById("fecha_desc").value = document.getElementById("fecha_text").value;
+        document.getElementById("turno_id").value = document.getElementById("ListaTurno123").value;
+     }
+
+</script>
